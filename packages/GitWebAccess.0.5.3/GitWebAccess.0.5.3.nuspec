@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>GitWebAccess</id>
+    <version>0.5.3</version>
+    <title>Git Web Access</title>
+    <authors>Yiyi Sun</authors>
+    <owners>Yiyi Sun</owners>
+    <licenseUrl>http://gitweb.codeplex.com/license</licenseUrl>
+    <projectUrl>http://gitweb.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Git Web Access provides Git Smart-HTTP protocol supports on IIS. It also exposes Git repository in format of OData.
+
+Features:
+
+* Clone, pull and push through IIS 
+* Leverage ASP.NET Membership for Authentication and Authorization 
+* Expose Git repository through WCF data services / OData protocol 
+* The OData feed can be used to plot the commit graph on HTML5 canvas.</description>
+    <summary>Git Web Access contains an ASP.NET HttpHandler that provides Git Smart-HTTP protocol supports on IIS. It also has a WCF Data services that exposes Git repository in format of OData.</summary>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>Git Smart-HTTP HttpHandler OData</tags>
+  </metadata>
+</package>
