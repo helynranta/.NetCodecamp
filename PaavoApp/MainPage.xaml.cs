@@ -49,5 +49,10 @@ namespace PaavoApp
             NavigationService.Navigate(new Uri("/StudentUnion.xaml", UriKind.Relative));
         }
 
+        private void KurniekkaTap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
+        }
+
     }
 }
