@@ -8,12 +8,8 @@
 
     <!--Application Resources-->
     <Application.Resources>
-<<<<<<< HEAD
-        <ImageBrush x:Key="BackgroundImage"></ImageBrush>
-        <converter:RssTextTrimmer xmlns:converter="clr-namespace:PaavoApp" x:Key="RssTextTrimmer" />
-=======
         <ImageBrush x:Key="SplashScreenImage"></ImageBrush>
->>>>>>> origin/Sonninen
+        <converter:RssTextTrimmer xmlns:converter="clr-namespace:PaavoApp" x:Key="RssTextTrimmer" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
