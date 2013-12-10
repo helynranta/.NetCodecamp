@@ -8,7 +8,7 @@
 
     <!--Application Resources-->
     <Application.Resources>
-        <ImageBrush x:Key="SplashScreenImage.png"></ImageBrush>
+        <ImageBrush x:Key="SplashScreenImage"></ImageBrush>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

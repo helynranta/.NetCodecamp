@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
   <App xmlns="" ProductID="{6325ad17-d219-4922-a519-ebb9b9e97fcd}" Title="PaavoApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PaavoApp author" Description="Sample description" Publisher="PaavoApp" BitsPerPixel="32">
-    <IconPath IsRelative="true" IsResource="false">Background.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Resources\Paavo_Icon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
