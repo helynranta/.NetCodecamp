@@ -29,6 +29,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock x:Name="testi" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Width="436" Height="597" Margin="10,0,10,10"/>
+            <Button Content="Lataa Kuulustelu Lista" HorizontalAlignment="Center" Margin="0,65,4,0" VerticalAlignment="Top" Width="auto" BorderThickness="0,3,3,3" Tap="downloadPDF"/>
         </Grid>
     </Grid>
 
