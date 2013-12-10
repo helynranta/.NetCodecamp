@@ -9,6 +9,7 @@
     <!--Application Resources-->
     <Application.Resources>
         <ImageBrush x:Key="BackgroundImage"></ImageBrush>
+        <converter:RssTextTrimmer xmlns:converter="clr-namespace:PaavoApp" x:Key="RssTextTrimmer" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
