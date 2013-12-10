@@ -17,22 +17,21 @@
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-        <controls:Panorama Title="Paavo knows everyhing">
+        <controls:Panorama Title="Paavo" Margin="-10,0,10,0">
             <controls:Panorama.Background>
                 <ImageBrush x:Name ="BackgroundImage"/>
             </controls:Panorama.Background>
 
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="Ruokalistat">
+            <controls:PanoramaItem Header="Skinnarila" FontSize="25" FontFamily="Segoe WP Black" Width="433">
                 <!--Double line list with text wrapping-->
                 <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}" SelectionChanged="ListBox_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" Width="432" Height="78">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock></TextBlock>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -42,8 +41,8 @@
             <!--Panorama item two-->
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
             <controls:PanoramaItem Header="Ruokalista">
-                <ListBox Margin="0,0,-12,0" Tap="WeatherTap">
-                    <TextBlock x:Name="Homo" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Press to refresh" FontSize="25" FontFamily="Comic Sans MS" Margin="10,0"/>
+                <ListBox Margin="0,0,-12,0">
+                    <TextBlock x:Name="Homo" Tap="AalefTap" Width="433" Height="128" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Aalef Nappi" FontSize="25" FontFamily="Comic Sans MS"/>
                 </ListBox>
 
                 <!--Double line list with image placeholder and text wrapping-->
