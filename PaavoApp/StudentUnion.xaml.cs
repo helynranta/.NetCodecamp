@@ -32,19 +32,20 @@ namespace PaavoApp
         public StudentUnion()
         {
             InitializeComponent();
-            Loaded += StudentUnionPage_Loaded;
+            Loaded += MainPage_Loaded;
         }
 
         /// Page loaded.
-        void StudentUnionPage_Loaded(object sender, RoutedEventArgs e)
+        void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+
             string url = "http://eatatlut.appspot.com/studentunion";
             LoadSiteContent(url); // Load food info
 
-            string studentunionWebcamURL = "http://ruutcam.lut.fi/yo-talo/webcam.jpg";
+            string img_url = "http://ruutcam.lut.fi/yo-talo/webcam.jpg";
             WebClient wc = new WebClient();
             wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
-            wc.OpenReadAsync(new Uri(studentunionWebcamURL), wc);
+            wc.OpenReadAsync(new Uri(img_url), wc);
 
         }
 
