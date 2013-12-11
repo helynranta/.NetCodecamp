@@ -19,7 +19,7 @@ using System.Collections.ObjectModel;
 
 namespace PaavoApp
 {
-    public partial class StudentUnion : PhoneApplicationPage
+    public partial class Kurniekka : PhoneApplicationPage
     {
 
         public ObservableCollection<MyListViewModel> MondayList { get; set; }
@@ -28,8 +28,7 @@ namespace PaavoApp
         public ObservableCollection<MyListViewModel> ThursdayList { get; set; }
         public ObservableCollection<MyListViewModel> FridayList { get; set; }
 
-        // Constructor
-        public StudentUnion()
+        public Kurniekka()
         {
             InitializeComponent();
             Loaded += MainPage_Loaded;
@@ -39,13 +38,8 @@ namespace PaavoApp
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
 
-            string url = "http://eatatlut.appspot.com/studentunion";
+            string url = "http://eatatlut.appspot.com/kurniekka";
             LoadSiteContent(url); // Load food info
-
-            string img_url = "http://ruutcam.lut.fi/yo-talo/webcam.jpg";
-            WebClient wc = new WebClient();
-            wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
-            wc.OpenReadAsync(new Uri(img_url), wc);
 
         }
 
@@ -185,23 +179,6 @@ namespace PaavoApp
                 }
                 // Bind data to Listbox outside of loop
                 MenuFriday.ItemsSource = FridayList;
-            }
-        }
-
-        // Background from webcam
-        void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
-        {
-            if (e.Error == null && !e.Cancelled)
-            {
-                BitmapImage image = new BitmapImage();
-                image.SetSource(e.Result);
-                ImageBrush background = new ImageBrush();
-                background.ImageSource = image;
-                LayoutRoot.Background = background;
-            }
-            else
-            {
-                //Either cancelled or error handle appropriately for your app  
             }
         }
 

@@ -144,7 +144,12 @@ namespace PaavoApp
                         examtime.time_ = splitted_date[1];
                         examtime.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
                         tentti.times.Add(examtime);
-                    }                   
+                    }else{
+                        examtime.fullTime = "";
+                        examtime.date = "";
+                        examtime.time_ = "";
+                        tentti.times.Add(examtime);
+                    }
                 }
                 examslist.Add(tentti);
             }
@@ -256,25 +261,7 @@ namespace PaavoApp
                 if (CourseSearch.Text.Length > 2)
                 {
                     examsReady = false;
-                    //CourseOutput.Text = "";
                     courseTempl.ItemsSource = await UpdateCourseList(CourseSearch.Text);
-                    //CourseOutput.Text = courses;
-
-                    /*CourseOutput.Text = "";
-                    if (CourseSearch.Text.Length > 1)
-                    {
-
-                        foreach (Exam exam in examslist)
-                        {
-                            if (exam.name.Contains(CourseSearch.Text))
-                            {
-                                CourseOutput.Text += "\n" +exam.name + "\n";
-                                CourseOutput.Text += exam.nro;
-                                foreach (ExamsTime time in exam.times)
-                                    CourseOutput.Text += time.date + "klo " + time.time_;
-                            }
-                        }
-                    }*/
                     examsReady = true;
                 }
             }

@@ -28,8 +28,10 @@
             <controls:PanoramaItem Header="Skinnarila" FontSize="25" FontFamily="Segoe WP Black" Width="433">
                 <!--Double line list with text wrapping-->
                 <ListBox Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged">
-                    <Button Content="GIBESTIVE SÄÄ" Width="407" Click="Button_Click" Height="149"/>
+                    <Button Content="GIBESTIVE SÄÄ" Width="407" Click="Weather_Click" Height="149"/>
                     <Button Content="Gibestive Tentit" Width="407" Click="ExamButtonClick" Height="149"/>
+                    <Button Content="Gibestive selam" Height="149" Width="408" Click="Selam_Click"/>
+					<Button Content="Gibestive RuutCam" Width="407" Click="RuutButtonClick" Height="149"/>
                 </ListBox>
             </controls:PanoramaItem>
 

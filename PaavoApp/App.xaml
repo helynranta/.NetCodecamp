@@ -16,10 +16,10 @@
         <DataTemplate x:Key="FoodTemplate">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Width="auto" Name="Type" Text="{Binding Field2}" FontSize="30" Margin="0,0,50,0" />
-                    <TextBlock Width="auto" Name="Price" Text="{Binding Field4}" FontSize="30" />
+                    <TextBlock Width="auto" Name="Type" Text="{Binding Field2}" FontSize="40" Margin="0,0,20,0" />
+                    <TextBlock Width="auto" Name="Price" Text="{Binding Field4}" FontSize="40" HorizontalAlignment="Right" />
                 </StackPanel>
-                <TextBlock Width="auto" Name="Description" Text="{Binding Field3}" FontSize="30" />
+                <TextBlock Width="auto" Name="Description" Text="{Binding Field3}" FontSize="25" />
                 <TextBlock Width="auto" Name="Blank" Text=" " FontSize="30" />
             </StackPanel>
         </DataTemplate>
@@ -37,7 +37,6 @@
                     <TextBlock Width="auto" Name="Time3" Text="{Binding times[2].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
                     <TextBlock Width="auto" Name="Time4" Text="{Binding times[3].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
                     <TextBlock Width="auto" Name="Time5" Text="{Binding times[4].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
-                    <TextBlock Width="auto" Name="Time6" Text="{Binding times[5].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
                 </StackPanel>
                
             </StackPanel>
