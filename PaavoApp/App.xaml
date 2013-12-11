@@ -16,15 +16,8 @@
         <DataTemplate x:Key="FoodTemplate">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-<<<<<<< HEAD
-
                     <TextBlock Width="auto" Name="Type" Text="{Binding Field2}" FontSize="40" Margin="0,0,20,0" />
                     <TextBlock Width="auto" Name="Price" Text="{Binding Field4}" FontSize="40" HorizontalAlignment="Right" />
-
-=======
-                    <TextBlock Width="auto" Name="Type" Text="{Binding Field2}" FontSize="30" Margin="0,0,50,0" />
-                    <TextBlock Width="auto" Name="Price" Text="{Binding Field4}" FontSize="30" />
->>>>>>> origin/Lerppana
                 </StackPanel>
                 <TextBlock Width="auto" Name="Description" Text="{Binding Field3}" FontSize="25" />
                 <TextBlock Width="auto" Name="Blank" Text=" " FontSize="30" />
