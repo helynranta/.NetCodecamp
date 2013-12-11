@@ -38,11 +38,9 @@ namespace PaavoApp
         /// Page loaded.
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            //LoadTestData();
-
 
             string url = "http://eatatlut.appspot.com/studentunion";
-            LoadSiteContent(url);
+            LoadSiteContent(url); // Load food info
 
             string img_url = "http://ruutcam.lut.fi/yo-talo/webcam.jpg";
             WebClient wc = new WebClient();
@@ -50,7 +48,6 @@ namespace PaavoApp
             wc.OpenReadAsync(new Uri(img_url), wc);
 
         }
-
 
         // Load food info
         public void LoadSiteContent(string url)
