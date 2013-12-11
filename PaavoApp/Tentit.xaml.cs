@@ -154,6 +154,7 @@ namespace PaavoApp
                     {
                         examtime.date = splitted_date[0];
                         examtime.time_ = splitted_date[1];
+                        examtime.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
                         tentti.times.Add(examtime);
                     }                   
                 }
@@ -162,22 +163,8 @@ namespace PaavoApp
             examsReady = true;
      
         }
-
-        private async void SearchUpdate(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            if(cts != null)
-                cts.Cancel();
-            if (examsReady)
-            {
-                if (CourseSearch.Text.Length > 2)
-                {
-                    //await UpdateCourseList();
-                    //CourseOutput.Text = courses;
-                }
-            }
-        }
         //public delegate void 
-        protected async Task<List<Exam>> UpdateCourseList()
+        protected async Task<List<Exam>> UpdateCourseList(string cs)
         {
             
             return await Task.Factory.StartNew<List<Exam>>( () => 
@@ -185,7 +172,7 @@ namespace PaavoApp
                 List<Exam> localFinal = new List<Exam>();
                 foreach (Exam exam in examslist)
                 {
-                    if (exam.name.IndexOf(CourseSearch.Text, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                    if (exam.name.IndexOf(cs, StringComparison.CurrentCultureIgnoreCase) >= 0)
                         localFinal.Add(exam);
                 }
               
@@ -200,7 +187,7 @@ namespace PaavoApp
                 {
                     examsReady = false;
                     //CourseOutput.Text = "";
-                    courseTempl.ItemsSource = await UpdateCourseList();
+                    courseTempl.ItemsSource = await UpdateCourseList(CourseSearch.Text);
                     //CourseOutput.Text = courses;
 
                     /*CourseOutput.Text = "";

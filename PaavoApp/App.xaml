@@ -27,11 +27,19 @@
         <DataTemplate x:Key="CourseTemplate">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Width="auto" Name="name" Text="{Binding name, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="30" Margin="0,0,50,0" />
-                    <TextBlock Width="auto" Name="courseId" Text="{Binding nro, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="30" />
+                    <TextBlock Width="auto" Name="name" Text="{Binding name, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="25" Margin="0,0,50,0" />
                 </StackPanel>
-                <TextBlock Width="auto" Name="Description" Text="{Binding name, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="30" />
-                <TextBlock Width="auto" Name="Blank" Text=" " FontSize="30" />
+                <TextBlock Width="auto" Name="courseId" Text="{Binding nro, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
+               
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="auto" Name="Time" Text="{Binding times[0].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
+                    <TextBlock Width="auto" Name="Time2" Text="{Binding times[1].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
+                    <TextBlock Width="auto" Name="Time3" Text="{Binding times[2].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
+                    <TextBlock Width="auto" Name="Time4" Text="{Binding times[3].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
+                    <TextBlock Width="auto" Name="Time5" Text="{Binding times[4].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
+                    <TextBlock Width="auto" Name="Time6" Text="{Binding times[5].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
+                </StackPanel>
+               
             </StackPanel>
         </DataTemplate>
 
