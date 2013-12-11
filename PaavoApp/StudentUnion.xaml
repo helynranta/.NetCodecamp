@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -12,6 +13,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -19,18 +21,45 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Yo-Talo Aalef" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Ruokalista" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+        <controls:Panorama Title="Aalef" Margin="-10,0,10,0">
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox Margin="0,0,-12,0" Tap="UnionTap">
-                <TextBlock x:Name="Homo" Width="auto" Height="auto" Text="Press to refresh" FontSize="25" FontFamily="Comic Sans MS" RenderTransformOrigin="0.331,0.217"/>
-            </ListBox>
-        </Grid>
+            <!--Panorama page Monday-->
+            <controls:PanoramaItem Header="Maanantai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuMonday" Margin="16,20,19,50" Height="399"
+                     ItemTemplate="{StaticResource FoodTemplate}"/>
+
+            </controls:PanoramaItem>
+
+            <!--Panorama page Tuesday-->
+            <controls:PanoramaItem Header="Tiistai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuTuesday" Margin="16,20,19,50" Height="399"
+                     ItemTemplate="{StaticResource FoodTemplate}"/>
+
+            </controls:PanoramaItem>
+
+            <!--Panorama page Wednesday-->
+            <controls:PanoramaItem Header="Keskiviikko" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuWednesday" Margin="16,20,19,50" Height="399"
+                     ItemTemplate="{StaticResource FoodTemplate}"/>
+
+            </controls:PanoramaItem>
+
+            <!--Panorama page Thursday-->
+            <controls:PanoramaItem Header="Torstai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuThursday" Margin="16,20,19,50" Height="399"
+                     ItemTemplate="{StaticResource FoodTemplate}"/>
+
+            </controls:PanoramaItem>
+
+            <!--Panorama page Friday-->
+            <controls:PanoramaItem Header="Perjantai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuFriday" Margin="16,20,19,50" Height="399"
+                     ItemTemplate="{StaticResource FoodTemplate}"/>
+
+            </controls:PanoramaItem>
+
+
+        </controls:Panorama>
     </Grid>
 
 </phone:PhoneApplicationPage>

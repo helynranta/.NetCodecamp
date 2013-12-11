@@ -12,6 +12,22 @@
     <Application.Resources>
         <ImageBrush x:Key="SplashScreenImage"></ImageBrush>
         <converter:RssTextTrimmer xmlns:converter="clr-namespace:PaavoApp" x:Key="RssTextTrimmer" />
+
+        <!--DataTemplate for food-->
+        <DataTemplate x:Key="FoodTemplate">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Width="auto" Name="Type" Text="{Binding Field2}" FontSize="30" Margin="0,0,50,0" />
+                    <TextBlock Width="auto" Name="Price" Text="{Binding Field4}" FontSize="30" />
+
+                </StackPanel>
+                <TextBlock Width="auto" Name="Description" Text="{Binding Field3}" FontSize="30" />
+                <TextBlock Width="auto" Name="Blank" Text=" " FontSize="30" />
+
+            </StackPanel>
+        </DataTemplate>
+
     </Application.Resources>
     <Application.ApplicationLifetimeObjects>
         <!--Required object that handles lifetime events for the application-->
