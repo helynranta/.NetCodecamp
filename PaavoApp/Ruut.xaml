@@ -1,0 +1,44 @@
+﻿<phone:PhoneApplicationPage
+	x:Class="PaavoApp.Ruut"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	SupportedOrientations="Portrait" Orientation="Portrait"
+	mc:Ignorable="d"
+	shell:SystemTray.IsVisible="True">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<controls:Panorama Title="RuutCam" Margin="-10,0,10,0">
+			<controls:Panorama.Background>
+				<ImageBrush x:Name ="PanoramaBackground" ImageSource="Resources/Paavo_Gear.png"/>
+			</controls:Panorama.Background>
+
+			<!--Panorama page Aalef-->
+			<controls:PanoramaItem Header="Aalef" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+				<Image Source="http://ruutcam.lut.fi/yo-talo/webcam.jpg" HorizontalAlignment="Left" Height="348" VerticalAlignment="Top" Width="423"/>
+
+			</controls:PanoramaItem>
+
+			<!--Panorama page Yliopisto-->
+			<controls:PanoramaItem Header="Yliopisto" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+				<Image Source="http://ruutcam.lut.fi/lutcam/webcam.jpg" HorizontalAlignment="Left" Height="348" VerticalAlignment="Top" Width="421"/>
+
+			</controls:PanoramaItem>
+
+		</controls:Panorama>
+	</Grid>
+
+</phone:PhoneApplicationPage>
