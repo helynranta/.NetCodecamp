@@ -36,16 +36,19 @@ namespace PaavoApp
         }
 
         /// Page loaded.
-        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        void StudentUnionPage_Loaded(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+>>>>>>> Coffeebreak
             string url = "http://eatatlut.appspot.com/studentunion";
             LoadSiteContent(url); // Load food info
 
-            string img_url = "http://ruutcam.lut.fi/yo-talo/webcam.jpg";
+            string studentunionWebcamURL = "http://ruutcam.lut.fi/yo-talo/webcam.jpg";
             WebClient wc = new WebClient();
             wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
-            wc.OpenReadAsync(new Uri(img_url), wc);
+            wc.OpenReadAsync(new Uri(studentunionWebcamURL), wc);
 
         }
 

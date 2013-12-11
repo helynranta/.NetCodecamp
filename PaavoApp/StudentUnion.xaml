@@ -26,36 +26,32 @@
         <controls:Panorama Title="Aalef">
 
             <!--Panorama page Monday-->
-            <controls:PanoramaItem Header="Maanantai" FontSize="25" FontFamily="Segoe WP Black">
-                <ListBox x:Name="MenuMonday"
+            <controls:PanoramaItem Header="Maanantai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuMonday" Margin="16,20,19,50" Height="399"
                      ItemTemplate="{StaticResource FoodTemplate}"/>
 
             </controls:PanoramaItem>
 
             <!--Panorama page Tuesday-->
-            <controls:PanoramaItem Header="Tiistai" FontSize="25" FontFamily="Segoe WP Black">
-                <ListBox x:Name="MenuTuesday"
+            <controls:PanoramaItem Header="Tiistai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuTuesday" Margin="16,20,19,50" Height="399"
                      ItemTemplate="{StaticResource FoodTemplate}"/>
 
             </controls:PanoramaItem>
 
             <!--Panorama page Wednesday-->
-            <controls:PanoramaItem Header="Keskiviikko" FontSize="25" FontFamily="Segoe WP Black">
-                <ListBox x:Name="MenuWednesday"
+            <controls:PanoramaItem Header="Keskiviikko" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuWednesday" Margin="16,20,19,50" Height="399"
                      ItemTemplate="{StaticResource FoodTemplate}"/>
 
             </controls:PanoramaItem>
 
             <!--Panorama page Thursday-->
-            <controls:PanoramaItem Header="Torstai" FontSize="25" FontFamily="Segoe WP Black">
-                <ListBox x:Name="MenuThursday"
                      ItemTemplate="{StaticResource FoodTemplate}"/>
 
             </controls:PanoramaItem>
 
             <!--Panorama page Friday-->
-            <controls:PanoramaItem Header="Perjantai" FontSize="25" FontFamily="Segoe WP Black">
-                <ListBox x:Name="MenuFriday"
                      ItemTemplate="{StaticResource FoodTemplate}"/>
 
             </controls:PanoramaItem>

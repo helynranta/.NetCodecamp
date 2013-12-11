@@ -191,6 +191,7 @@
     <Content Include="Resources\kurniekka_leveä.png" />
     <Content Include="Resources\Paavo_Gear.png" />
     <Content Include="Resources\Paavo_Icon.png" />
+    <Content Include="Resources\Paavo_Ruokalistat_Background.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
