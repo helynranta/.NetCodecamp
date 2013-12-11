@@ -15,15 +15,16 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <!--A black rectangle with 50% opacity to make the text easier to read-->
-        <Rectangle x:Name="Tausta" Fill="Black" HorizontalAlignment="Left" Height="799" 
-                   Stroke="Black" Opacity="0.5" VerticalAlignment="Top" Width="480" Margin="0,-31,0,0" 
-                   Grid.RowSpan="2">
-        </Rectangle>
-
-        <controls:Panorama Title="Aalef">
+        <controls:Panorama Title="Aalef" Margin="-10,0,10,0">
+            <controls:Panorama.Background>
+                <ImageBrush x:Name ="PanoramaBackground" ImageSource="Resources/Paavo_Ruokalistat_Background.png"/>
+            </controls:Panorama.Background>
 
             <!--Panorama page Monday-->
             <controls:PanoramaItem Header="Maanantai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
@@ -47,14 +48,19 @@
             </controls:PanoramaItem>
 
             <!--Panorama page Thursday-->
+            <controls:PanoramaItem Header="Torstai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuThursday" Margin="16,20,19,50" Height="399"
                      ItemTemplate="{StaticResource FoodTemplate}"/>
 
             </controls:PanoramaItem>
 
             <!--Panorama page Friday-->
+            <controls:PanoramaItem Header="Perjantai" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="MenuFriday" Margin="16,20,19,50" Height="399"
                      ItemTemplate="{StaticResource FoodTemplate}"/>
 
             </controls:PanoramaItem>
+
 
         </controls:Panorama>
     </Grid>

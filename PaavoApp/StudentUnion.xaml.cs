@@ -32,16 +32,12 @@ namespace PaavoApp
         public StudentUnion()
         {
             InitializeComponent();
-            Loaded += MainPage_Loaded;
+            Loaded += StudentUnionPage_Loaded;
         }
 
         /// Page loaded.
         void StudentUnionPage_Loaded(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-
-=======
->>>>>>> Coffeebreak
             string url = "http://eatatlut.appspot.com/studentunion";
             LoadSiteContent(url); // Load food info
 
