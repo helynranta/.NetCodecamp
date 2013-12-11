@@ -32,7 +32,7 @@ namespace PaavoApp
         public Tentit()
         {
             InitializeComponent();
-            
+            courses.ItemsSource = examslist;
             download();
         }
         private void download()
@@ -172,10 +172,8 @@ namespace PaavoApp
                 {
                     cts = new CancellationTokenSource();
                     string courses = await UpdateCourseList();
-                    CourseOutput.Text = courses;
+                    //CourseOutput.Text = courses;
                 }
-                else
-                    CourseOutput.Text = "";
             }
         }
         //public delegate void 
@@ -205,9 +203,9 @@ namespace PaavoApp
             {
                 if (CourseSearch.Text.Length > 2)
                 {
-                    CourseOutput.Text = "";
+                    //CourseOutput.Text = "";
                     string courses = await UpdateCourseList();
-                    CourseOutput.Text = courses;
+                    //CourseOutput.Text = courses;
 
                     /*CourseOutput.Text = "";
                     if (CourseSearch.Text.Length > 1)
