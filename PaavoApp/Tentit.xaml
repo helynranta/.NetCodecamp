@@ -36,7 +36,10 @@
             <TextBox x:Name="CourseSearch" HorizontalAlignment="Left" Height="72" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hae kurssia" VerticalAlignment="Top" Width="446" TextChanged="SearchTextChanged"/>
             <ScrollViewer Height="auto" Width="auto" HorizontalScrollBarVisibility="Auto" Canvas.Top="60" Canvas.Left="340" Margin="0,109,0,0">
                 <DataTemplate>
-                    <TextBlock x:Name="CourseOutput" Text="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Height="auto" Width="auto" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=courseID}"></TextBlock>
+                        <TextBlock Text="{Binding Path=CourseName}"></TextBlock>
+                    </StackPanel>
                 </DataTemplate>
             </ScrollViewer>
         </Grid>
