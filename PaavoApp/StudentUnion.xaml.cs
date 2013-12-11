@@ -28,17 +28,14 @@ namespace PaavoApp
         public ObservableCollection<MyListViewModel> ThursdayList { get; set; }
         public ObservableCollection<MyListViewModel> FridayList { get; set; }
 
+        // Constructor
         public StudentUnion()
         {
             InitializeComponent();
             Loaded += MainPage_Loaded;
         }
 
-        /// <summary> 
-        /// Page loaded. 
-        /// </summary> 
-        /// <param name="sender"></param> 
-        /// <param name="e"></param> 
+        /// Page loaded.
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             //LoadTestData();
@@ -63,144 +60,134 @@ namespace PaavoApp
             client.DownloadStringAsync(new Uri(url));
         }
 
+        // Load food info
         private void DownloadStringCallback2(Object sender, DownloadStringCompletedEventArgs e)
         {
             if (!e.Cancelled && e.Error == null)
             {
 
                 MondayList = new ObservableCollection<MyListViewModel>();
-
                 RootObject root = JsonConvert.DeserializeObject<RootObject>((string)e.Result);
 
                 // Monday
-                if (root.days.monday.ElementAt(0).name != "None")
+                for (int i = 0; i < root.days.monday.Count(); i++)
                 {
-                    for (int i = 0; i < root.days.monday.Count(); i++)
-                    {
-                        Monday ruoka = root.days.monday.ElementAt(i);
+                    Monday ruoka = root.days.monday.ElementAt(i);
 
-                        MyListViewModel info = new MyListViewModel();
-                        info.Field2 = ruoka.coursetype;
-                        info.Field3 = ruoka.name;
+                    MyListViewModel info = new MyListViewModel();
+                    info.Field2 = ruoka.coursetype;
+                    info.Field3 = ruoka.name;
 
-                        // Set price by coursetype
-                        if (info.Field2 == "Kokin suositus")
-                            info.Field4 = "4.40";
-                        else if (info.Field2 == "Kotoisia makuja")
-                            info.Field4 = "2.60";
-                        else
-                            info.Field4 = "9.99";
+                    // Set price by coursetype
+                    if (info.Field2 == "Kokin suositus")
+                        info.Field4 = "4.40";
+                    else if (info.Field2 == "Kotoisia makuja")
+                        info.Field4 = "2.60";
+                    else
+                        info.Field4 = "9.99";
 
-                        MondayList.Add(info);
-                        MenuMonday.ItemsSource = MondayList;
-
-                    }
+                    MondayList.Add(info);
                 }
+                // Bind data to Listbox outside of loop
+                MenuMonday.ItemsSource = MondayList;
 
                 // Tuesday
-                if (root.days.tuesday.ElementAt(0).name != "None")
+                TuesdayList = new ObservableCollection<MyListViewModel>();
+                for (int i = 0; i < root.days.tuesday.Count(); i++)
                 {
-                    TuesdayList = new ObservableCollection<MyListViewModel>();
-                    for (int i = 0; i < root.days.tuesday.Count(); i++)
-                    {
-                        Tuesday ruoka = root.days.tuesday.ElementAt(i);
+                    Tuesday ruoka = root.days.tuesday.ElementAt(i);
 
-                        MyListViewModel info = new MyListViewModel();
+                    MyListViewModel info = new MyListViewModel();
 
-                        info.Field2 = ruoka.coursetype;
-                        info.Field3 = ruoka.name;
+                    info.Field2 = ruoka.coursetype;
+                    info.Field3 = ruoka.name;
 
-                        // Set price by coursetype
-                        if (info.Field2 == "Kokin suositus")
-                            info.Field4 = "4.40";
-                        else if (info.Field2 == "Kotoisia makuja")
-                            info.Field4 = "2.60";
-                        else
-                            info.Field4 = "9.99";
+                    // Set price by coursetype
+                    if (info.Field2 == "Kokin suositus")
+                        info.Field4 = "4.40";
+                    else if (info.Field2 == "Kotoisia makuja")
+                        info.Field4 = "2.60";
+                    else
+                        info.Field4 = "9.99";
 
-                        TuesdayList.Add(info);
-                        MenuTuesday.ItemsSource = TuesdayList;
-                    }
+                    TuesdayList.Add(info);
                 }
+                // Bind data to Listbox outside of loop
+                MenuTuesday.ItemsSource = TuesdayList;
 
                 // Wednesday
-                if (root.days.wednesday.ElementAt(0).name != "None")
+                WednesdayList = new ObservableCollection<MyListViewModel>();
+                for (int i = 0; i < root.days.wednesday.Count(); i++)
                 {
-                    WednesdayList = new ObservableCollection<MyListViewModel>();
-                    for (int i = 0; i < root.days.wednesday.Count(); i++)
-                    {
-                        Wednesday ruoka = root.days.wednesday.ElementAt(i);
+                    Wednesday ruoka = root.days.wednesday.ElementAt(i);
 
-                        MyListViewModel info = new MyListViewModel();
+                    MyListViewModel info = new MyListViewModel();
 
-                        info.Field2 = ruoka.coursetype;
-                        info.Field3 = ruoka.name;
+                    info.Field2 = ruoka.coursetype;
+                    info.Field3 = ruoka.name;
 
-                        // Set price by coursetype
-                        if (info.Field2 == "Kokin suositus")
-                            info.Field4 = "4.40";
-                        else if (info.Field2 == "Kotoisia makuja")
-                            info.Field4 = "2.60";
-                        else
-                            info.Field4 = "9.99";
+                    // Set price by coursetype
+                    if (info.Field2 == "Kokin suositus")
+                        info.Field4 = "4.40";
+                    else if (info.Field2 == "Kotoisia makuja")
+                        info.Field4 = "2.60";
+                    else
+                        info.Field4 = "9.99";
 
-                        WednesdayList.Add(info);
-                        MenuWednesday.ItemsSource = WednesdayList;
-                    }
+                    WednesdayList.Add(info);
+                    MenuWednesday.ItemsSource = WednesdayList;
                 }
+                // Bind data to Listbox outside of loop
+                MenuWednesday.ItemsSource = WednesdayList;
 
                 // Thursday
-                if (root.days.thursday.ElementAt(0).name != "None")
+                ThursdayList = new ObservableCollection<MyListViewModel>();
+                for (int i = 0; i < root.days.thursday.Count(); i++)
                 {
-                    ThursdayList = new ObservableCollection<MyListViewModel>();
-                    for (int i = 0; i < root.days.thursday.Count(); i++)
-                    {
-                        Thursday ruoka = root.days.thursday.ElementAt(i);
+                    Thursday ruoka = root.days.thursday.ElementAt(i);
 
-                        MyListViewModel info = new MyListViewModel();
+                    MyListViewModel info = new MyListViewModel();
 
-                        info.Field2 = ruoka.coursetype;
-                        info.Field3 = ruoka.name;
+                    info.Field2 = ruoka.coursetype;
+                    info.Field3 = ruoka.name;
 
-                        // Set price by coursetype
-                        if (info.Field2 == "Kokin suositus")
-                            info.Field4 = "4.40";
-                        else if (info.Field2 == "Kotoisia makuja")
-                            info.Field4 = "2.60";
-                        else
-                            info.Field4 = "9.99";
+                    // Set price by coursetype
+                    if (info.Field2 == "Kokin suositus")
+                        info.Field4 = "4.40";
+                    else if (info.Field2 == "Kotoisia makuja")
+                        info.Field4 = "2.60";
+                    else
+                        info.Field4 = "9.99";
 
-                        ThursdayList.Add(info);
-                        MenuThursday.ItemsSource = ThursdayList;
-
-                    }
+                    ThursdayList.Add(info);
                 }
-                if (root.days.tuesday.ElementAt(0).name != "None")
+                // Bind data to Listbox outside of loop
+                MenuThursday.ItemsSource = ThursdayList;
+
+
+                // Friday
+                FridayList = new ObservableCollection<MyListViewModel>();
+                for (int i = 0; i < root.days.friday.Count(); i++)
                 {
-                    FridayList = new ObservableCollection<MyListViewModel>();
-                    for (int i = 0; i < root.days.friday.Count(); i++)
-                    {
-                        Friday ruoka = root.days.friday.ElementAt(i);
+                    Friday ruoka = root.days.friday.ElementAt(i);
 
-                        MyListViewModel info = new MyListViewModel();
+                    MyListViewModel info = new MyListViewModel();
 
-                        info.Field2 = ruoka.coursetype;
-                        info.Field3 = ruoka.name;
+                    info.Field2 = ruoka.coursetype;
+                    info.Field3 = ruoka.name;
 
-                        // Set price by coursetype
-                        if (info.Field2 == "Kokin suositus")
-                            info.Field4 = "4.40";
-                        else if (info.Field2 == "Kotoisia makuja")
-                            info.Field4 = "2.60";
-                        else
-                            info.Field4 = "9.99";
+                    // Set price by coursetype
+                    if (info.Field2 == "Kokin suositus")
+                        info.Field4 = "4.40";
+                    else if (info.Field2 == "Kotoisia makuja")
+                        info.Field4 = "2.60";
+                    else
+                        info.Field4 = "9.99";
 
-                        FridayList.Add(info);
-                        MenuFriday.ItemsSource = FridayList;
-
-                    }
+                    FridayList.Add(info);
                 }
-
+                // Bind data to Listbox outside of loop
+                MenuFriday.ItemsSource = FridayList;
             }
         }
 
@@ -221,55 +208,15 @@ namespace PaavoApp
             }
         }
 
-
-
-        /// <summary> 
-        /// Test data. 
-        /// </summary> 
-        /*
-                private void LoadTestData()
-                {
-                    myVM = new ObservableCollection<MyListViewModel> 
-                          { 
-                              new MyListViewModel 
-                                  { 
-                        Field1 = "Day",
-                        Field2 = "Type",
-                        Field3 = "Description",
-                        Field4 = "Price" 
-                                  }  
-                          };
-                    MyListViewModel toinen = new MyListViewModel
-                    {
-                        Field1 = "Day2",
-                        Field2 = "Type2",
-                        Field3 = "Desc2",
-                        Field4 = "Price2"
-                    };
-                    myVM.Add(toinen);
-                }
-                */
-        /// <summary> 
-        /// Data bind to ListBox 
-        /// </summary> 
-        private void BindData()
+        // Entity for Data 
+        public class MyListViewModel
         {
-            MenuMonday.ItemsSource = MondayList;
+            public string Field2 { get; set; }
+
+            public string Field3 { get; set; }
+
+            public string Field4 { get; set; }
+
         }
-
-    }
-
-
-    /// <summary> 
-    /// Entity for testã€€Data 
-    /// </summary> 
-    public class MyListViewModel
-    {
-        public string Field2 { get; set; }
-
-        public string Field3 { get; set; }
-
-        public string Field4 { get; set; }
-
     }
 }
