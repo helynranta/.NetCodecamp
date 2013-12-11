@@ -15,6 +15,7 @@ using ImageTools;
 using ImageTools.Controls;
 using ImageTools.IO;
 using System.ComponentModel;
+using System.Windows.Data;
 using System.Threading.Tasks; 
 
 namespace PaavoApp
@@ -28,11 +29,11 @@ namespace PaavoApp
         string changes = null;
         bool examsReady = false;
         List<Exam> examslist = new List<Exam>();
+        List<Exam> examsToShow = new List<Exam>();
        
         public Tentit()
         {
             InitializeComponent();
-            courses.ItemsSource = examslist;
             download();
         }
         private void download()
@@ -153,49 +154,35 @@ namespace PaavoApp
                     {
                         examtime.date = splitted_date[0];
                         examtime.time_ = splitted_date[1];
+                        examtime.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
                         tentti.times.Add(examtime);
-                    }                   
+                    }else{
+                        examtime.fullTime = "";
+                        examtime.date = "";
+                        examtime.time_ = "";
+                        tentti.times.Add(examtime);
+                    }
                 }
                 examslist.Add(tentti);
             }
             examsReady = true;
      
         }
-
-        private async void SearchUpdate(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            if(cts != null)
-                cts.Cancel();
-            if (examsReady)
-            {
-                if (CourseSearch.Text.Length > 2)
-                {
-                    cts = new CancellationTokenSource();
-                    string courses = await UpdateCourseList();
-                    //CourseOutput.Text = courses;
-                }
-            }
-        }
         //public delegate void 
-        protected async Task<string> UpdateCourseList()
+        protected async Task<List<Exam>> UpdateCourseList(string cs)
         {
-            string Courses = "";
-            foreach (Exam exam in examslist)
-            {
-                if (exam.name.IndexOf(CourseSearch.Text, StringComparison.CurrentCultureIgnoreCase) >=0)
-                {
-                    Courses += "\n" + exam.name + "\n";
-                    Courses += exam.nro + "\n ";
-                    foreach (ExamsTime time in exam.times)
-                    {
-                        Courses += time.date + " klo. " + time.time_ + ".15, ";
-                        if (exam.times.Count() > 3 && exam.times.IndexOf(time) == 2)
-                            Courses += "\n";
-                    }
-                }
-            }
             
-            return Courses;
+            return await Task.Factory.StartNew<List<Exam>>( () => 
+            {
+                List<Exam> localFinal = new List<Exam>();
+                foreach (Exam exam in examslist)
+                {
+                    if (exam.name.IndexOf(cs, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                        localFinal.Add(exam);
+                }
+              
+                return localFinal;
+            });
         }
         private async void SearchTextChanged(object sender, TextChangedEventArgs e)
         {
@@ -203,27 +190,16 @@ namespace PaavoApp
             {
                 if (CourseSearch.Text.Length > 2)
                 {
-                    //CourseOutput.Text = "";
-                    string courses = await UpdateCourseList();
-                    //CourseOutput.Text = courses;
-
-                    /*CourseOutput.Text = "";
-                    if (CourseSearch.Text.Length > 1)
-                    {
-
-                        foreach (Exam exam in examslist)
-                        {
-                            if (exam.name.Contains(CourseSearch.Text))
-                            {
-                                CourseOutput.Text += "\n" +exam.name + "\n";
-                                CourseOutput.Text += exam.nro;
-                                foreach (ExamsTime time in exam.times)
-                                    CourseOutput.Text += time.date + "klo " + time.time_;
-                            }
-                        }
-                    }*/
+                    examsReady = false;
+                    courseTempl.ItemsSource = await UpdateCourseList(CourseSearch.Text);
+                    examsReady = true;
                 }
             }
+        }
+
+        private void courseTempl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

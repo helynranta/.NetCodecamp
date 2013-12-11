@@ -1,0 +1,211 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PaavoApp.SelamPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <controls:Panorama Title="Selam" x:Name="panorama" Margin="-10,0,10,0">
+        <controls:Panorama.Background>
+                <ImageBrush ImageSource="Resources/Selam.jpg"/>
+        </controls:Panorama.Background>
+         
+
+
+
+            <!--Panorama page Pizzat-->
+            <controls:PanoramaItem Header="Pizzat" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="Pizzat" Margin="16,20,19,50" Height="399">
+                    <TextBlock TextWrapping="Wrap" Text="1. Bolognese   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Jauheliha" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="2. Kinkku      8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="3. Tonnikala       8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Tonnikala" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="4. Salami      8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Salami" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="5. Opera       8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Tonnikala" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="6. Hawai     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Ananas" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="7. Francescana     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Herkkusieni" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="8. Americano       8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Ananas, Aurajuusto" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="9. Chicken Hawai       8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kana, Ananas, Aurajuusto" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="10. Frutti di Mare       8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Tonnikala, Simpukka, Katkarapu" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="11. Julia       8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Ananas, Katkarapu, Aurajuusto" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="12. Mexico       8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Tacokastike, Pepperoni, Ananas, Jalapeno" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="13. Sammon Special       8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Herkkusieni, Salami, Sipuli" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="14. Kebabpizza       8,50"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kebabliha, Turkinpippuri, Tomaatti, Sipuli" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="15. Opera Special       8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Tonnikala, Salami, Sipuli" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="16. Opiskelija      8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Salami, Jauheliha, Pekoni" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="17. Dillinger      8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Salami, Jauheliha, Sipuli" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="18. Quattro      8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Tonnikala, Herkkusieni, Katkarapu" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="19. Torino      8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Tonnikala, Katkarapu, Aura- ja Fetajuusto" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="20. Pappa Special      8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Salami, Jauheliha, Sipuli, Pekoni" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="21. Super Salami      8,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Salami, Kananmuna, Pekoni" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="22. Vatan Special      9,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Salami, Sipuli, Katkarapu, Tuplajuusto" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="23. Meat Lovers(EI marjanpoimijoille!)      9,00"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Salami, Jauheliha, Kebabliha, Pekoni" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="24. Istanbul Special      9,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Herkkusieni, Ananas, Katkarapu, Tuplajuusto" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="25. Kemer      9,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Salami, Katkarapu, Sipuli, Mustapippuri, Aurajuusto" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="26. Selam Special      9,50€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Kebabliha, Pepperoni, Herkkusieni, Sipuli, Jalapeno" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="27. Oma Valinta      9,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -4 lisätäytettä oman valinnan mukaan." FontSize="20" Foreground="#FFFB0404"/>
+                    
+                </ListBox>
+            </controls:PanoramaItem>
+
+            <!--Panorama page kebabit-->
+            <controls:PanoramaItem Header="Kebabit" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                <ListBox x:Name="Kebabit" Margin="16,20,19,50" Height="399">
+                    <TextBlock TextWrapping="Wrap" Text="1. Leipäkebab   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="2. Riisikebab     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Riisi, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="3. Kebab Salaatilla   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="4. Iskender Kebab      8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Leipäviipale, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="5. Kebab Ranskalaisilla   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Ranskalaiset, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="6. Kebab Lohkoperunoilla     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Lohkoperunat, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="7. Rullakebab   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Ohut leipä, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="8. Kebab Kermaperunoilla     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kermaperunat, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="9. Kebab Kermajuustoperunoilla   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kermajuustoperunat, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="10. Kebab Aurajuustoperunoilla     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Aurajuusto, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="11. Kebab Valkosipuliperunoilla   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Valkosipuliperunat, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="12. Calzone Kebab      8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kebabliha, Sipuli, Tomaatti, Juusto, Chili, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="13. Special Kebab   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Ranskalaiset, Riisi, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="14. Marmaris Kebab     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Lohkoperunat, Riisi, Kebabliha, Salaatti, Kastike" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="15. Selam Kebab   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kermaperunat, Riisi, Kebabliha" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="KAIKKI RUOKA-ANNOKSET SAA MYÖS TUPLALIHALLA" Foreground="#FFFF0606" FontSize="36"/>
+
+
+                </ListBox>
+            </controls:PanoramaItem>
+
+            <!--Panorama page Muut lel-->
+            
+            <controls:PanoramaItem Header="Salaatit" FontSize="25" FontFamily="Segoe WP Black" Width="433">
+                    <ListBox Margin="16,20,19,50" Height="399">
+                    <TextBlock TextWrapping="Wrap" Text="1. Fetasalaatti   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Fetajuusto, Oliivi, Sipuli, Kurkku, Tomaatti" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="2. Kanasalaatti     8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kana, Ananas, Kurkku, Tomaatti" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="3. Tonnikalasalaatti   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Tonnikala, Paprika, Sipuli, Tomaatti, Kurkku" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="4. Katkarapusalaatti      8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Katkarapu, Paprika, Ananas, Tomaatti, Kurkku" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="5. Kinkkusalaatti   8,00€"/>
+                    <TextBlock TextWrapping="Wrap" Text="       -Kinkku, Paprika, Sipuli, Tomaatti, Kurkku" FontSize="20"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="Salaattiannoksiin sisältyy leipä ja kastike maun mukaan: " Foreground="#FFF30808"/>
+                    <TextBlock TextWrapping="Wrap" Text=" "/>
+                    <TextBlock TextWrapping="Wrap" Text="Tomaattikastike Valkosipulikastike Sinappikastike" Foreground="#FFDE05F3"/>
+
+                </ListBox>
+                
+            </controls:PanoramaItem>
+            
+            <!-- Panorama page Soita -->
+            
+            <controls:PanoramaItem Header="Soita" FontSize="28" FontFamily="Segoe WP Black" Width="433">
+                <Button Content="PAINA&#xD;&#xA;TÄSTÄ&#xD;&#xA;SOITTAAKSESI&#xD;&#xA;" HorizontalAlignment="Left" Height="379" VerticalAlignment="Top" Width="421" FontSize="48" Click="Button_Click"/>
+            </controls:PanoramaItem>
+
+
+
+        </controls:Panorama>
+    </Grid>
+
+</phone:PhoneApplicationPage>

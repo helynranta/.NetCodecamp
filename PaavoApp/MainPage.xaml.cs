@@ -14,6 +14,8 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using System.Windows.Media.Imaging;
+using Microsoft.Phone.Tasks;
+
 //
 
 namespace PaavoApp
@@ -49,6 +51,7 @@ namespace PaavoApp
 			NavigationService.Navigate(new Uri("/StudentUnion.xaml", UriKind.Relative));
 		}
 
+<<<<<<< HEAD
 		private void KurniekkaTap(object sender, GestureEventArgs e)
 		{
 			NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
@@ -63,9 +66,35 @@ namespace PaavoApp
 			NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
 		}
 
+=======
+        private void KurniekkaTap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Kurniekka.xaml", UriKind.Relative));
+        }
+
+        private void Weather_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Weather.xaml", UriKind.Relative));
+        }
+        private void ExamButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
+        }
+
+        private void Selam_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SelamPage.xaml", UriKind.Relative));
+        }
+
+>>>>>>> origin/codecamp
 		private void RuutButtonClick(object sender, RoutedEventArgs e)
 		{
 			NavigationService.Navigate(new Uri("/Ruut.xaml", UriKind.Relative));
 		}
+<<<<<<< HEAD
 	}
+=======
+
+    }
+>>>>>>> origin/codecamp
 }

@@ -115,6 +115,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="exams.cs" />
+    <Compile Include="Kurniekka.xaml.cs">
+      <DependentUpon>Kurniekka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,9 @@
     <Compile Include="RssTextTrimmer.cs" />
     <Compile Include="Ruut.xaml.cs">
       <DependentUpon>Ruut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelamPage.xaml.cs">
+      <DependentUpon>SelamPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentUnion.xaml.cs">
       <DependentUpon>StudentUnion.xaml</DependentUpon>
@@ -141,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Kurniekka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +160,10 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="Ruut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelamPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,11 +181,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PaavoApp_2013_12_11_12_19_23.sap" />
-    <None Include="PaavoApp_2013_12_11_12_28_52.sap" />
-    <None Include="PaavoApp_2013_12_11_12_29_16.sap" />
-    <None Include="PaavoApp_2013_12_11_12_30_58.sap" />
-    <None Include="PaavoApp_2013_12_11_12_32_20.sap" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -181,6 +190,9 @@
   <ItemGroup>
     <Resource Include="ajax-loader.gif" />
     <Content Include="Resources\Background.png" />
+    <Content Include="Resources\Selam2.png" />
+    <Content Include="Resources\Lel.png" />
+    <Content Include="Resources\Selam.jpg" />
     <Content Include="Resources\Paavo_Background.png" />
     <Content Include="Resources\aaleflogo.png" />
     <Content Include="Resources\kurniekka_leveä.png" />
