@@ -15,6 +15,7 @@ using ImageTools;
 using ImageTools.Controls;
 using ImageTools.IO;
 using System.ComponentModel;
+using System.Windows.Data;
 using System.Threading.Tasks; 
 
 namespace PaavoApp
@@ -28,11 +29,11 @@ namespace PaavoApp
         string changes = null;
         bool examsReady = false;
         List<Exam> examslist = new List<Exam>();
+        List<Exam> examsToShow = new List<Exam>();
        
         public Tentit()
         {
             InitializeComponent();
-            courses.ItemsSource = examslist;
             download();
         }
         private void download()
@@ -170,32 +171,26 @@ namespace PaavoApp
             {
                 if (CourseSearch.Text.Length > 2)
                 {
-                    cts = new CancellationTokenSource();
-                    string courses = await UpdateCourseList();
+                    //await UpdateCourseList();
                     //CourseOutput.Text = courses;
                 }
             }
         }
         //public delegate void 
-        protected async Task<string> UpdateCourseList()
+        protected async Task<List<Exam>> UpdateCourseList()
         {
-            string Courses = "";
-            foreach (Exam exam in examslist)
-            {
-                if (exam.name.IndexOf(CourseSearch.Text, StringComparison.CurrentCultureIgnoreCase) >=0)
-                {
-                    Courses += "\n" + exam.name + "\n";
-                    Courses += exam.nro + "\n ";
-                    foreach (ExamsTime time in exam.times)
-                    {
-                        Courses += time.date + " klo. " + time.time_ + ".15, ";
-                        if (exam.times.Count() > 3 && exam.times.IndexOf(time) == 2)
-                            Courses += "\n";
-                    }
-                }
-            }
             
-            return Courses;
+            return await Task.Factory.StartNew<List<Exam>>( () => 
+            {
+                List<Exam> localFinal = new List<Exam>();
+                foreach (Exam exam in examslist)
+                {
+                    if (exam.name.IndexOf(CourseSearch.Text, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                        localFinal.Add(exam);
+                }
+              
+                return localFinal;
+            });
         }
         private async void SearchTextChanged(object sender, TextChangedEventArgs e)
         {
@@ -203,8 +198,9 @@ namespace PaavoApp
             {
                 if (CourseSearch.Text.Length > 2)
                 {
+                    examsReady = false;
                     //CourseOutput.Text = "";
-                    string courses = await UpdateCourseList();
+                    courseTempl.ItemsSource = await UpdateCourseList();
                     //CourseOutput.Text = courses;
 
                     /*CourseOutput.Text = "";
@@ -222,6 +218,7 @@ namespace PaavoApp
                             }
                         }
                     }*/
+                    examsReady = true;
                 }
             }
         }
