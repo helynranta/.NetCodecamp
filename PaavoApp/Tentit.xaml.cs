@@ -171,7 +171,7 @@ namespace PaavoApp
                 if (CourseSearch.Text.Length > 2)
                 {
                     cts = new CancellationTokenSource();
-                    string courses = await UpdateCourseList(cts.Token);
+                    string courses = await UpdateCourseList();
                     CourseOutput.Text = courses;
                 }
                 else
@@ -179,7 +179,7 @@ namespace PaavoApp
             }
         }
         //public delegate void 
-        protected async Task<string> UpdateCourseList(CancellationToken ct)
+        protected async Task<string> UpdateCourseList()
         {
             string Courses = "";
             foreach (Exam exam in examslist)
@@ -201,15 +201,12 @@ namespace PaavoApp
         }
         private async void SearchTextChanged(object sender, TextChangedEventArgs e)
         {
-            if(cts != null)
-                cts.Cancel();
             if (examsReady)
             {
                 if (CourseSearch.Text.Length > 2)
                 {
-                    cts = new CancellationTokenSource();
                     CourseOutput.Text = "";
-                    string courses = await UpdateCourseList(cts.Token);
+                    string courses = await UpdateCourseList();
                     CourseOutput.Text = courses;
 
                     /*CourseOutput.Text = "";
@@ -227,7 +224,6 @@ namespace PaavoApp
                             }
                         }
                     }*/
-                    cts = null;
                 }
             }
         }

@@ -58,6 +58,10 @@ namespace PaavoApp
         {
             NavigationService.Navigate(new Uri("/Weather.xaml", UriKind.Relative));
         }
+        private void ExamButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
+        }
 
     }
 }
