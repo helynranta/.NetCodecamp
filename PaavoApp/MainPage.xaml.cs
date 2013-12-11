@@ -14,6 +14,8 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using System.Windows.Media.Imaging;
+using Microsoft.Phone.Tasks;
+
 //
 
 namespace PaavoApp
@@ -54,13 +56,18 @@ namespace PaavoApp
             NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Weather_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Weather.xaml", UriKind.Relative));
         }
         private void ExamButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
+        }
+
+        private void Selam_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SelamPage.xaml", UriKind.Relative));
         }
 
     }
