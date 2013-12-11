@@ -197,43 +197,41 @@ namespace PaavoApp
                 tentti = examslist.SingleOrDefault(x => x.getNro()  == exam[0].Substring(exam[0].IndexOf('>') + 1, exam[0].Length - exam[0].IndexOf('>') - 3));
                 examslist.Remove(tentti);
                 //find replacable time from times list and replace it
-                ExamsTime times;
+                
                 string[] dates = exam[3].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
                 string time_date = dates[1].Substring(0, dates[1].Length - 2);
                 string[] splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
-                times = tentti.times.SingleOrDefault(x => x.getTime() == splitted_date[0]);
+                ExamsTime time = tentti.times.SingleOrDefault(x => x.getTime() == splitted_date[0]);
+                tentti.times.Remove(time);
+                ExamsTime times = new ExamsTime();
                 //parse new time
                 dates = exam[2].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
                 time_date = dates[1].Substring(0, dates[1].Length - 2);
                 splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
-                if (splitted_date.Length == 0)
+                if (splitted_date[0].Contains("&nbsp;"))
+                    splitted_date[0] = splitted_date[0].Substring(0, splitted_date[0].Length - 6);
+                if (splitted_date[0] == "Ei aiempaa tenttiä")
                 {
-                    tentti.times[tentti.times.IndexOf(times)].date = "";
-                    tentti.times[tentti.times.IndexOf(times)].time_ = "";
-                    tentti.times[tentti.times.IndexOf(times)].fullTime = "Peruttu";
+                    times.date = splitted_date[0];
+                    times.time_ = splitted_date[1];
+                    times.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
+                }
+                else if (splitted_date[0] == "Tentti poistettu")
+                {
+                    times.date = "";
+                    times.time_ = "";
+                    times.fullTime = "Peruttu";
                 }
                 else
                 {
-                    tentti.times[tentti.times.IndexOf(times)].date = splitted_date[0];
-                    tentti.times[tentti.times.IndexOf(times)].time_ = splitted_date[1];
-                    tentti.times[tentti.times.IndexOf(times)].fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
+                    if (splitted_date[1].Contains("&nbsp;"))
+                        splitted_date[1] = splitted_date[1].Substring(0, splitted_date[1].Length - 6);
+                    times.date = splitted_date[0];
+                    times.time_ = splitted_date[1];
+                    times.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
                 }
-
+                tentti.times.Add(times);
                 examslist.Add(tentti);
-                /*for (int i = 2; i <= 6; i++)
-                {
-                    ExamsTime examtime = new ExamsTime();
-                    string[] dates = exam[i].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
-                    string time_date = dates[1].Substring(0, dates[1].Length - 2);
-                    string[] splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
-                    if (splitted_date[0] != "-")
-                    {
-                        examtime.date = splitted_date[0];
-                        examtime.time_ = splitted_date[1];
-                        examtime.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
-                        
-                    }
-                }*/
             }
             examsReady = true;
 
