@@ -37,7 +37,6 @@
                     <TextBlock Width="auto" Name="Time3" Text="{Binding times[2].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
                     <TextBlock Width="auto" Name="Time4" Text="{Binding times[3].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
                     <TextBlock Width="auto" Name="Time5" Text="{Binding times[4].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
-                    <TextBlock Width="auto" Name="Time6" Text="{Binding times[5].fullTime, Mode=TwoWay, UpdateSourceTrigger=Explicit}" FontSize="15" />
                 </StackPanel>
                
             </StackPanel>
