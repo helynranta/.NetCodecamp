@@ -23,5 +23,6 @@ namespace PaavoApp
     {
         public string date { get; set; }
         public string time_ { get; set; }
+        public string fullTime { get; set; }
     }
 }
