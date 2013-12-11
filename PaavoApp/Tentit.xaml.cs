@@ -84,22 +84,10 @@ namespace PaavoApp
                         break;
                     }
                 }
-                /*changes in exams
-                splitted = examsContent.Split(stringSeparator, StringSplitOptions.None);
-                foreach (string sentence in splitted)
-                {
-                    if (sentence.Contains("Muutokset kuulustelujärjestykseen"))
-                    {
-                        splitted = sentence.Split(new char[] { '"' }, StringSplitOptions.None);
-                        changes = "https://uni.lut.fi" + splitted[1];
-                        break;
-                    }
-                }*/
                 //parse exams 
                 WebClient wc = new WebClient();
                 wc.OpenReadCompleted += new OpenReadCompletedEventHandler(parseExams);
-                wc.OpenReadAsync(new Uri(koul_koht), wc); 
-                
+                wc.OpenReadAsync(new Uri(koul_koht), wc);
             }
             else
             {
@@ -117,7 +105,7 @@ namespace PaavoApp
                 browseToPDF.URL = PDFcontent;
                 browseToPDF.Show();
             }
-        }
+        }//Parse all exams
         private void parseExams(object sender, OpenReadCompletedEventArgs e)
         {
             StreamReader reader = new StreamReader(e.Result);
@@ -160,8 +148,90 @@ namespace PaavoApp
                 }
                 examslist.Add(tentti);
             }
+            #region changes in exams
+            /*parse changes in exams!----------*
+            *----------------------------------*
+            *--------------------------------- */
+            splitted = examsContent.Split(new string[] { "<p>" }, StringSplitOptions.None);
+            foreach (string sentence in splitted)
+            {
+                if (sentence.Contains("Muutokset kuulustelujärjestykseen"))
+                {
+                    splitted = sentence.Split(new char[] { '"' }, StringSplitOptions.None);
+                    changes = "https://uni.lut.fi" + splitted[1];
+                    break;
+                }
+            }
+            WebClient wc = new WebClient();
+            wc.OpenReadCompleted += new OpenReadCompletedEventHandler(parseExamChanges);
+            wc.OpenReadAsync(new Uri(changes), wc);
+            #endregion
+        }
+        //Parse changes in exams
+        private void parseExamChanges(object sender, OpenReadCompletedEventArgs e)
+        {
+            //start stream from bites
+            StreamReader reader = new StreamReader(e.Result);
+            changes = reader.ReadToEnd();//changes from bites to string
+            string[] splitted = changes.Split(new string[] { "<tr>" }, StringSplitOptions.None);//split from <tr> tags
+            var exams = splitted.ToList();
+            for (int i = 0; i < exams.Count(); i++)
+            {//delete unnesessary members from list
+                if (exams[i].Contains("table") || exams[i].Contains("Uusi") || exams[i].Length < 10) 
+                {
+                    exams.RemoveAt(i);
+                    i--;
+                }
+            }
+            //go threw all lines, one line is examstring
+            foreach (string examstring in exams)
+            {
+                string[] exam = examstring.Split(new string[] { "td>" }, StringSplitOptions.RemoveEmptyEntries);
+                Exam tentti = new Exam();
+                //course ID
+                tentti = examslist.SingleOrDefault(x => x.getNro()  == exam[0].Substring(exam[0].IndexOf('>') + 1, exam[0].Length - exam[0].IndexOf('>') - 3));
+                examslist.Remove(tentti);
+                //find replacable time from times list and replace it
+                ExamsTime times;
+                string[] dates = exam[3].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
+                string time_date = dates[1].Substring(0, dates[1].Length - 2);
+                string[] splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
+                times = tentti.times.SingleOrDefault(x => x.getTime() == splitted_date[0]);
+                //parse new time
+                dates = exam[2].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
+                time_date = dates[1].Substring(0, dates[1].Length - 2);
+                splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
+                if (splitted_date.Length == 0)
+                {
+                    tentti.times[tentti.times.IndexOf(times)].date = "";
+                    tentti.times[tentti.times.IndexOf(times)].time_ = "";
+                    tentti.times[tentti.times.IndexOf(times)].fullTime = "Peruttu";
+                }
+                else
+                {
+                    tentti.times[tentti.times.IndexOf(times)].date = splitted_date[0];
+                    tentti.times[tentti.times.IndexOf(times)].time_ = splitted_date[1];
+                    tentti.times[tentti.times.IndexOf(times)].fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
+                }
+
+                examslist.Add(tentti);
+                /*for (int i = 2; i <= 6; i++)
+                {
+                    ExamsTime examtime = new ExamsTime();
+                    string[] dates = exam[i].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
+                    string time_date = dates[1].Substring(0, dates[1].Length - 2);
+                    string[] splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
+                    if (splitted_date[0] != "-")
+                    {
+                        examtime.date = splitted_date[0];
+                        examtime.time_ = splitted_date[1];
+                        examtime.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";
+                        
+                    }
+                }*/
+            }
             examsReady = true;
-     
+
         }
         //public delegate void 
         protected async Task<List<Exam>> UpdateCourseList(string cs)
