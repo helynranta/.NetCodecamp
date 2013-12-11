@@ -218,7 +218,7 @@ namespace PaavoApp
                 }
                 else if (splitted_date[0] == "Tentti poistettu")
                 {
-                    times.date = "";
+                    times.date = "Peruttu";
                     times.time_ = "";
                     times.fullTime = "Peruttu";
                 }
