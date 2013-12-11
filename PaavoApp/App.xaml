@@ -4,14 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:it="clr-namespace:ImageTools.Controls;assembly=ImageTools.Controls"
+    xmlns:vm="clr-namespace:PaavoApp.ViewModels">
 
     <!--Application Resources-->
     <Application.Resources>
         <ImageBrush x:Key="SplashScreenImage"></ImageBrush>
         <converter:RssTextTrimmer xmlns:converter="clr-namespace:PaavoApp" x:Key="RssTextTrimmer" />
     </Application.Resources>
-
     <Application.ApplicationLifetimeObjects>
         <!--Required object that handles lifetime events for the application-->
         <shell:PhoneApplicationService 

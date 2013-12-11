@@ -14,6 +14,10 @@ namespace PaavoApp
         public string nro { get; set; }
         public string name { get; set; }
         public List<ExamsTime> times { get; set;}
+        public Exam()
+        {
+            times = new List<ExamsTime>();
+        }
     }
     public class ExamsTime
     {

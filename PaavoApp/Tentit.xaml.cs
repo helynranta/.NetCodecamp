@@ -3,24 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Windows;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.IO;
 using Microsoft.Phone.Tasks;
+using ImageTools.IO.Gif;
+using ImageTools;
+using ImageTools.Controls;
+using ImageTools.IO;
+using System.ComponentModel;
+using System.Threading.Tasks; 
 
 namespace PaavoApp
 {
     public partial class Tentit : PhoneApplicationPage
     {
+        CancellationTokenSource cts;
         string PDFcontent = null;
         string examsContent = null;
         string koul_koht = null;
         string changes = null;
+        bool examsReady = false;
+        List<Exam> examslist = new List<Exam>();
+       
         public Tentit()
         {
             InitializeComponent();
+            
             download();
         }
         private void download()
@@ -71,7 +83,7 @@ namespace PaavoApp
                         break;
                     }
                 }
-                //changes in exams
+                /*changes in exams
                 splitted = examsContent.Split(stringSeparator, StringSplitOptions.None);
                 foreach (string sentence in splitted)
                 {
@@ -81,8 +93,8 @@ namespace PaavoApp
                         changes = "https://uni.lut.fi" + splitted[1];
                         break;
                     }
-                }
-                //testi.Text = changes;
+                }*/
+                //parse exams 
                 WebClient wc = new WebClient();
                 wc.OpenReadCompleted += new OpenReadCompletedEventHandler(parseExams);
                 wc.OpenReadAsync(new Uri(koul_koht), wc); 
@@ -119,8 +131,6 @@ namespace PaavoApp
                     i--;
                 }
             }
-
-            List<Exam> examslist = new List<Exam>();
             
             foreach(string examstring in exams)
             {
@@ -132,23 +142,94 @@ namespace PaavoApp
                 string[] course = exam[1].Split(new string[] { "b>" }, StringSplitOptions.RemoveEmptyEntries);
                 tentti.name = course[1].Substring(0,course[1].Length-2);
                 //dates
-                //****DOES NOT WORK MUTHAFUKA****
-                for (int i = 2; i == 6; i++)
+                //****works****
+                for (int i = 2; i <= 6; i++)
                 {
                     ExamsTime examtime = new ExamsTime();
-                    testi.Text = exam[i];
                     string[] dates = exam[i].Split(new string[] {">"}, StringSplitOptions.RemoveEmptyEntries);
-                    string time_date = dates[1].Substring(0, dates[1].Length-4);
+                    string time_date = dates[1].Substring(0, dates[1].Length-2);
                     string[] splitted_date = time_date.Split(new string[] {"/"}, StringSplitOptions.RemoveEmptyEntries);
-                    examtime.date = splitted_date[0];
-                    examtime.time_ = splitted_date[1];
-                    tentti.times.Add(examtime);
+                    if (splitted_date[0] != "-")
+                    {
+                        examtime.date = splitted_date[0];
+                        examtime.time_ = splitted_date[1];
+                        tentti.times.Add(examtime);
+                    }                   
                 }
                 examslist.Add(tentti);
             }
+            examsReady = true;
+     
+        }
 
+        private async void SearchUpdate(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if(cts != null)
+                cts.Cancel();
+            if (examsReady)
+            {
+                if (CourseSearch.Text.Length > 2)
+                {
+                    cts = new CancellationTokenSource();
+                    string courses = await UpdateCourseList(cts.Token);
+                    CourseOutput.Text = courses;
+                }
+                else
+                    CourseOutput.Text = "";
+            }
+        }
+        //public delegate void 
+        protected async Task<string> UpdateCourseList(CancellationToken ct)
+        {
+            string Courses = "";
+            foreach (Exam exam in examslist)
+            {
+                if (exam.name.IndexOf(CourseSearch.Text, StringComparison.CurrentCultureIgnoreCase) >=0)
+                {
+                    Courses += "\n" + exam.name + "\n";
+                    Courses += exam.nro + "\n ";
+                    foreach (ExamsTime time in exam.times)
+                    {
+                        Courses += time.date + " klo. " + time.time_ + ".15, ";
+                        if (exam.times.Count() > 3 && exam.times.IndexOf(time) == 2)
+                            Courses += "\n";
+                    }
+                }
+            }
             
-            examslist.Count();            
+            return Courses;
+        }
+        private async void SearchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(cts != null)
+                cts.Cancel();
+            if (examsReady)
+            {
+                if (CourseSearch.Text.Length > 2)
+                {
+                    cts = new CancellationTokenSource();
+                    CourseOutput.Text = "";
+                    string courses = await UpdateCourseList(cts.Token);
+                    CourseOutput.Text = courses;
+
+                    /*CourseOutput.Text = "";
+                    if (CourseSearch.Text.Length > 1)
+                    {
+
+                        foreach (Exam exam in examslist)
+                        {
+                            if (exam.name.Contains(CourseSearch.Text))
+                            {
+                                CourseOutput.Text += "\n" +exam.name + "\n";
+                                CourseOutput.Text += exam.nro;
+                                foreach (ExamsTime time in exam.times)
+                                    CourseOutput.Text += time.date + "klo " + time.time_;
+                            }
+                        }
+                    }*/
+                    cts = null;
+                }
+            }
         }
     }
 }

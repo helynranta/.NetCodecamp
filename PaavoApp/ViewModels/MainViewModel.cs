@@ -12,7 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
-
+using ImageTools;
+using ImageTools.Controls;
+using ImageTools.IO;
+using ImageTools.IO.Gif;
 
 namespace PaavoApp
 {
