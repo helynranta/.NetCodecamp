@@ -51,7 +51,7 @@ namespace PaavoApp
 
         private void KurniekkaTap(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Tentit.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Kurniekka.xaml", UriKind.Relative));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
