@@ -70,10 +70,5 @@ namespace PaavoApp
             NavigationService.Navigate(new Uri("/SelamPage.xaml", UriKind.Relative));
         }
 
-		private void RuutButtonClick(object sender, RoutedEventArgs e)
-		{
-			NavigationService.Navigate(new Uri("/Ruut.xaml", UriKind.Relative));
-		}
-
     }
 }
