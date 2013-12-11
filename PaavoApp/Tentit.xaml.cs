@@ -209,5 +209,10 @@ namespace PaavoApp
                 }
             }
         }
+
+        private void courseTempl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

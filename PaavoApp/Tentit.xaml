@@ -36,10 +36,8 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="Lataa Kuulustelu Lista" HorizontalAlignment="Center" Margin="83,-37,77,0" VerticalAlignment="Top" Width="auto" BorderThickness="3,3,3,3" Tap="downloadPDF"/>
-            <TextBox x:Name="CourseSearch" HorizontalAlignment="Left" Height="72" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hae kurssia" VerticalAlignment="Top" Width="446" TextChanged="SearchTextChanged"/>
-            <ScrollViewer Height="auto" Width="auto" HorizontalScrollBarVisibility="Auto" Canvas.Top="60" Canvas.Left="340" Margin="0,109,0,0">
-                <ListBox x:Name="courseTempl" ItemTemplate="{StaticResource CourseTemplate}" />
-            </ScrollViewer>
+            <TextBox x:Name="CourseSearch" HorizontalAlignment="Left" Height="72" Margin="0,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446" TextChanged="SearchTextChanged"/>
+            <ListBox x:Name="courseTempl" ItemTemplate="{StaticResource CourseTemplate}" Margin="0,110,0,0" />
         </Grid>
     </Grid>
 </phone:PhoneApplicationPage>
