@@ -123,7 +123,6 @@
     <Compile Include="CampusSodexo.xaml.cs">
       <DependentUpon>CampusSodexo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseModels\AalefDatabase.cs" />
     <Compile Include="exams.cs" />
     <Compile Include="Kurniekka.xaml.cs">
       <DependentUpon>Kurniekka.xaml</DependentUpon>
