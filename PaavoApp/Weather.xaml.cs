@@ -17,6 +17,17 @@ namespace PaavoApp
 {
     public partial class Weather : PhoneApplicationPage
     {
+        Dictionary<string, string> tiedot = new Dictionary<string, string> 
+                { 
+                    {"Lämpötila", "1"},
+                    {"Kastepiste","2"},
+                    {"Puuska", "2"},
+                    {"Pilvistä","3"},
+                    {"Kosteus", "4"},
+                    {"Lounaistuulta","5"},
+                    {"Paine", "6"},
+                    {"Näkyvyys","7"} 
+                };
         public Weather()
         {
             InitializeComponent();
@@ -51,17 +62,6 @@ namespace PaavoApp
                     }
                 }
                 
-                Dictionary<string,string> tiedot = new Dictionary<string, string> 
-                { 
-                    {"Lämpötila", "1"},
-                    {"Kastepiste","2"},
-                    {"Puuska", "2"},
-                    {"Pilvistä","3"},
-                    {"Kosteus", "4"},
-                    {"Lounaistuulta","5"},
-                    {"Paine", "6"},
-                    {"Näkyvyys","7"} 
-                };
                 string content_temp = "";
                 foreach (string key in tiedot.Keys.ToList())
                 {
@@ -79,6 +79,8 @@ namespace PaavoApp
                     content_temp = splitted[1].Replace("</span", "");
                     tiedot[key.ToString()] = content_temp;
                 }
+                WeatherLine.DataContext = tiedot;
+                WeatherLine.UpdateLayout();
             }
             else
             {

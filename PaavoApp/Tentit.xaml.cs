@@ -22,7 +22,6 @@ namespace PaavoApp
 {
     public partial class Tentit : PhoneApplicationPage
     {
-        CancellationTokenSource cts;
         string PDFcontent = null;
         string examsContent = null;
         string koul_koht = null;
