@@ -15,19 +15,37 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,12,0">
-        <TextBlock Text="Pure wow" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFF30404" FontSize="48"/>
-        <Button Content="Wow. Gibe wether" Height="72" HorizontalAlignment="Left" Margin="32,95,0,0" Name="loadFeedButton" VerticalAlignment="Top" Width="397" Click="loadFeedButton_Click" />
-
-        <ListBox Name="feedListBox" Height="468" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Width="444" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="feedListBox_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel VerticalAlignment="Top">
-                        <TextBlock TextDecorations="Underline" FontSize="24" Name="feedTitle" TextWrapping="Wrap" Margin="12,0,0,0" HorizontalAlignment="Left" Foreground="{StaticResource PhoneAccentBrush}" Text="{Binding Title.Text, Converter={StaticResource RssTextTrimmer}}" />
-                        <TextBlock Name="feedSummary" TextWrapping="Wrap" Margin="12,0,0,0" Text="{Binding Summary.Text, Converter={StaticResource RssTextTrimmer}}" />
-                        <TextBlock Name="feedPubDate" Foreground="{StaticResource PhoneSubtleBrush}" Margin="12,0,0,10" Text="{Binding PublishDate.DateTime}" />
+        <TextBlock Text="Sää Skinnarilassa" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFF30404" FontSize="48"/>
+        <ListBox Name="feedListBox" Height="663" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="444" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="feedListBox_SelectionChanged">
+            <Grid x:Name="WeatherLine">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Lämpötila: "/>
+                        <TextBlock Width="auto" Text="{Binding [Lämpötila]}" FontSize="40" Margin="0,0,20,0" />
+                        <TextBlock Text="Kosteus: "/>
+                        <TextBlock Width="auto" Text="{Binding [Kosteus]}" FontSize="40" Margin="0,0,20,0" />
                     </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Kastepiste: "/>
+                        <TextBlock Width="auto" Text="{Binding [Kastepiste]}" FontSize="40" Margin="0,0,20,0" />
+                        <TextBlock Text="Lounaistuulta: "/>
+                        <TextBlock Width="auto" Text="{Binding [Lounaistuulta]}" FontSize="40" Margin="0,0,20,0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Puuska: "/>
+                        <TextBlock Width="auto" Text="{Binding [Puuska]}" FontSize="40" Margin="0,0,20,0" />
+                        <TextBlock Text="Paine: "/>
+                        <TextBlock Width="auto" Text="{Binding [Paine]}" FontSize="40" Margin="0,0,20,0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Pilvistä: "/>
+                        <TextBlock Width="auto" Text="{Binding [Pilvistä]}" FontSize="40" Margin="0,0,20,0" />
+                        <TextBlock Text="Näkyvyys: "/>
+                        <TextBlock Width="auto" Text="{Binding [Näkyvyys]}" FontSize="40" Margin="0,0,20,0" />
+                    </StackPanel>
+                    <Image Source="http://cdn.fmi.fi/weather-observations/products/finland/finland-weather-observations-map.png" HorizontalAlignment="Left" Height="484" VerticalAlignment="Top" Width="365" Margin="0,0,-96,0"/>
+                </StackPanel>
+            </Grid>
         </ListBox>
         <Border BorderBrush="{StaticResource PhoneSubtleBrush}" BorderThickness="1" Height="2" HorizontalAlignment="Left" Margin="20,88,0,0" Name="border1" VerticalAlignment="Top" Width="438" />
     </Grid>

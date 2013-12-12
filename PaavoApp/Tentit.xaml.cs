@@ -22,7 +22,6 @@ namespace PaavoApp
 {
     public partial class Tentit : PhoneApplicationPage
     {
-        CancellationTokenSource cts;
         string PDFcontent = null;
         string examsContent = null;
         string koul_koht = null;
@@ -205,6 +204,7 @@ namespace PaavoApp
                 tentti.times.Remove(time);
                 ExamsTime times = new ExamsTime();
                 //parse new time
+
                 dates = exam[3].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
                 time_date = dates[1].Substring(0, dates[1].Length - 2);
                 splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
