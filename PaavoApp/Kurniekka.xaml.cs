@@ -66,16 +66,26 @@ namespace PaavoApp
                     Monday ruoka = root.days.monday.ElementAt(i);
 
                     MyListViewModel info = new MyListViewModel();
-                    info.Field2 = ruoka.coursetype;
-                    info.Field3 = ruoka.name;
+                    info.Type = ruoka.coursetype;
+                    info.Description = ruoka.name;
 
                     // Set price by coursetype
-                    if (info.Field2 == "Kokin suositus")
-                        info.Field4 = "4.40";
-                    else if (info.Field2 == "Kotoisia makuja")
-                        info.Field4 = "2.60";
+                    if (info.Type == "Kokin suositus")
+                        info.Price = "4.40";
+                    else if (info.Type == "Kotoisia makuja")
+                        info.Price = "2.60";
+                    else if (info.Type == "Kasvisherkkuja")
+                        info.Price = "2.20";
+                    else if (info.Type == "Soppaa")
+                        info.Price = "2.20";
+                    else if (info.Type == "Kevytkeitto")
+                        info.Price = "1.10";
+                    else if (info.Type == "Salaattilounas")
+                        info.Price = "2.60";
+                    else if (info.Type == "Jälkiruoka")
+                        info.Price = "0.50";
                     else
-                        info.Field4 = "9.99";
+                        info.Price = "1 bil dollars!";
 
                     MondayList.Add(info);
                 }
@@ -90,16 +100,26 @@ namespace PaavoApp
 
                     MyListViewModel info = new MyListViewModel();
 
-                    info.Field2 = ruoka.coursetype;
-                    info.Field3 = ruoka.name;
+                    info.Type = ruoka.coursetype;
+                    info.Description = ruoka.name;
 
                     // Set price by coursetype
-                    if (info.Field2 == "Kokin suositus")
-                        info.Field4 = "4.40";
-                    else if (info.Field2 == "Kotoisia makuja")
-                        info.Field4 = "2.60";
+                    if (info.Type == "Kokin suositus")
+                        info.Price = "4.40";
+                    else if (info.Type == "Kotoisia makuja")
+                        info.Price = "2.60";
+                    else if (info.Type == "Kasvisherkkuja")
+                        info.Price = "2.20";
+                    else if (info.Type == "Soppaa")
+                        info.Price = "2.20";
+                    else if (info.Type == "Kevytkeitto")
+                        info.Price = "1.10";
+                    else if (info.Type == "Salaattilounas")
+                        info.Price = "2.60";
+                    else if (info.Type == "Jälkiruoka")
+                        info.Price = "0.50";
                     else
-                        info.Field4 = "9.99";
+                        info.Price = "1 bil dollars!";
 
                     TuesdayList.Add(info);
                 }
@@ -114,16 +134,26 @@ namespace PaavoApp
 
                     MyListViewModel info = new MyListViewModel();
 
-                    info.Field2 = ruoka.coursetype;
-                    info.Field3 = ruoka.name;
+                    info.Type = ruoka.coursetype;
+                    info.Description = ruoka.name;
 
                     // Set price by coursetype
-                    if (info.Field2 == "Kokin suositus")
-                        info.Field4 = "4.40";
-                    else if (info.Field2 == "Kotoisia makuja")
-                        info.Field4 = "2.60";
+                    if (info.Type == "Kokin suositus")
+                        info.Price = "4.40";
+                    else if (info.Type == "Kotoisia makuja")
+                        info.Price = "2.60";
+                    else if (info.Type == "Kasvisherkkuja")
+                        info.Price = "2.20";
+                    else if (info.Type == "Soppaa")
+                        info.Price = "2.20";
+                    else if (info.Type == "Kevytkeitto")
+                        info.Price = "1.10";
+                    else if (info.Type == "Salaattilounas")
+                        info.Price = "2.60";
+                    else if (info.Type == "Jälkiruoka")
+                        info.Price = "0.50";
                     else
-                        info.Field4 = "9.99";
+                        info.Price = "1 bil dollars!";
 
                     WednesdayList.Add(info);
                     MenuWednesday.ItemsSource = WednesdayList;
@@ -139,16 +169,26 @@ namespace PaavoApp
 
                     MyListViewModel info = new MyListViewModel();
 
-                    info.Field2 = ruoka.coursetype;
-                    info.Field3 = ruoka.name;
+                    info.Type = ruoka.coursetype;
+                    info.Description = ruoka.name;
 
                     // Set price by coursetype
-                    if (info.Field2 == "Kokin suositus")
-                        info.Field4 = "4.40";
-                    else if (info.Field2 == "Kotoisia makuja")
-                        info.Field4 = "2.60";
+                    if (info.Type == "Kokin suositus")
+                        info.Price = "4.40";
+                    else if (info.Type == "Kotoisia makuja")
+                        info.Price = "2.60";
+                    else if (info.Type == "Kasvisherkkuja")
+                        info.Price = "2.20";
+                    else if (info.Type == "Soppaa")
+                        info.Price = "2.20";
+                    else if (info.Type == "Kevytkeitto")
+                        info.Price = "1.10";
+                    else if (info.Type == "Salaattilounas")
+                        info.Price = "2.60";
+                    else if (info.Type == "Jälkiruoka")
+                        info.Price = "0.50";
                     else
-                        info.Field4 = "9.99";
+                        info.Price = "1 bil dollars!";
 
                     ThursdayList.Add(info);
                 }
@@ -164,16 +204,26 @@ namespace PaavoApp
 
                     MyListViewModel info = new MyListViewModel();
 
-                    info.Field2 = ruoka.coursetype;
-                    info.Field3 = ruoka.name;
+                    info.Type = ruoka.coursetype;
+                    info.Description = ruoka.name;
 
                     // Set price by coursetype
-                    if (info.Field2 == "Kokin suositus")
-                        info.Field4 = "4.40";
-                    else if (info.Field2 == "Kotoisia makuja")
-                        info.Field4 = "2.60";
+                    if (info.Type == "Kokin suositus")
+                        info.Price = "4.40";
+                    else if (info.Type == "Kotoisia makuja")
+                        info.Price = "2.60";
+                    else if (info.Type == "Kasvisherkkuja")
+                        info.Price = "2.20";
+                    else if (info.Type == "Soppaa")
+                        info.Price = "2.20";
+                    else if (info.Type == "Kevytkeitto")
+                        info.Price = "1.10";
+                    else if (info.Type == "Salaattilounas")
+                        info.Price = "2.60";
+                    else if (info.Type == "Jälkiruoka")
+                        info.Price = "0.50";
                     else
-                        info.Field4 = "9.99";
+                        info.Price = "1 bil dollars!";
 
                     FridayList.Add(info);
                 }
@@ -185,11 +235,11 @@ namespace PaavoApp
         // Entity for Data 
         public class MyListViewModel
         {
-            public string Field2 { get; set; }
+            public string Type { get; set; }
 
-            public string Field3 { get; set; }
+            public string Description { get; set; }
 
-            public string Field4 { get; set; }
+            public string Price { get; set; }
 
         }
     }
