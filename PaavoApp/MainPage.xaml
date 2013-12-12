@@ -35,13 +35,13 @@
                 </ListBox>
             </controls:PanoramaItem>
 
-            <!--Panorama item two-->
-            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+            <!--Panorama item for restaurants-->
             <controls:PanoramaItem Header="Ruokalista">
                 <ListBox Margin="0,0,-12,0">
                     <Image Source="Resources/aaleflogo.png" Tap="AalefTap" Width="431" Margin="0" />
-                    <Image Source="/Resources/kurniekkalogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
-
+                    <Image Source="Resources/kurniekkalogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
+                    <Image Source="Resources/SodexoUniLogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
+                    <Image Source="Resources/SodexoCampusLogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
                 </ListBox>
 
                 <!--Double line list with image placeholder and text wrapping-->
