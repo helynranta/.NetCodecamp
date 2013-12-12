@@ -13,6 +13,11 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+
+
+
+
 
 
 
@@ -27,6 +32,7 @@ namespace PaavoApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             Storyboard sbFadeIn = new Storyboard();
             sbFadeIn.Completed += new EventHandler(sb_Completed);
 
@@ -39,6 +45,11 @@ namespace PaavoApp
             phoneCallTask.Show();
 
         }
+
+private Stream OpenStream(string p)
+{
+ 	throw new NotImplementedException();
+}
         private void FadeInOut(DependencyObject target, Storyboard sb, bool isFadeIn)
         {
             Duration d = new Duration(TimeSpan.FromSeconds(1));
