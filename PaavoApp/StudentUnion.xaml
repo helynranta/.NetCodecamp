@@ -24,7 +24,6 @@
         </Rectangle>
 
         <controls:Panorama Title="Aalef">
-
             <!--Panorama page Monday-->
             <controls:PanoramaItem Header="Maanantai" FontSize="25" FontFamily="Segoe WP Black">
                 <ListBox x:Name="MenuMonday"
