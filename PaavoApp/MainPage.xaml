@@ -16,37 +16,39 @@
 	SupportedOrientations="Portrait"  Orientation="Portrait"
 	shell:SystemTray.IsVisible="False">
 
-	<!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot"  HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="1" >
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"  HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="1" >
 
-		<controls:Panorama Title="Paavo" Margin="-10,0,10,0">
-			<controls:Panorama.Background>
-				<ImageBrush x:Name ="PanoramaBackground" ImageSource="Resources/Paavo_Gear.png"/>
-			</controls:Panorama.Background>
+        <controls:Panorama Title="Paavo" Margin="-10,0,10,0">
+            <controls:Panorama.Background>
+                <ImageBrush x:Name ="PanoramaBackground" ImageSource="Resources/Paavo_Gear.png"/>
+            </controls:Panorama.Background>
 
             <!--Panorama item one-->
             <controls:PanoramaItem Header="Skinnarila" FontSize="25" FontFamily="Segoe WP Black" Width="433">
                 <!--Double line list with text wrapping-->
-                <ListBox Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged">
-                    <Button Content="GIBESTIVE SÄÄ" Width="407" Click="Weather_Click" Height="149"/>
-                    <Button Content="Gibestive Tentit" Width="407" Click="ExamButtonClick" Height="149"/>
-                    <Button Content="Gibestive selam" Height="149" Width="408" Click="Selam_Click"/>
-					<Button Content="Gibestive RuutCam" Width="407" Click="RuutButtonClick" Height="149"/>
-                </ListBox>
+                <Grid Opacity="1">
+                    <Button Content="Tentit" Width="200" Click="ExamButtonClick" Height="200" Margin="11,10,210,288"/>
+                    <Button Content="Sää" Width="200" Click="Weather_Click" Height="200" Margin="211,10,10,288"/>
+                    <Button Content="RuutCam" Width="200" Click="RuutButtonClick" Height="200" Margin="11,215,210,83"/>
+                    <Button Content="Selam" Width="200" Click="Selam_Click" Height="200" Margin="211,215,10,83"/>
+                </Grid>
             </controls:PanoramaItem>
-			
+
             <!--Panorama item for restaurants-->
             <controls:PanoramaItem Header="Ruokalista">
                 <ListBox Margin="0,0,-12,0">
                     <Image Source="Resources/aaleflogo.png" Tap="AalefTap" Width="431" Margin="0" />
                     <Image Source="Resources/kurniekkalogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
-                    <Image Source="Resources/SodexoUniLogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
-                    <Image Source="Resources/SodexoCampusLogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
+                    <Image Source="Resources/SodexoUniLogo.png" Tap="UniSodexoTap" Width="431" Margin="0" />
+                    <Image Source="Resources/SodexoCampusLogo.png" Tap="CampusSodexoTap" Width="431" Margin="0" />
                 </ListBox>
 
 
-				<!--Double line list with image placeholder and text wrapping-->
-			</controls:PanoramaItem>
-		</controls:Panorama>
-	</Grid>
+                <!--Double line list with image placeholder and text wrapping-->
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
 </phone:PhoneApplicationPage>
+    
+    

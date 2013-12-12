@@ -115,6 +115,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CampusSodexo.xaml.cs">
+      <DependentUpon>CampusSodexo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseModels\AalefDatabase.cs" />
     <Compile Include="exams.cs" />
     <Compile Include="Kurniekka.xaml.cs">
@@ -137,6 +140,10 @@
     <Compile Include="Tentit.xaml.cs">
       <DependentUpon>Tentit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UniSodexo.xaml.cs">
+      <DependentUpon>UniSodexo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UniWeek.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Weather.xaml.cs">
@@ -148,6 +155,10 @@
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CampusSodexo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Kurniekka.xaml">
       <SubType>Designer</SubType>
@@ -170,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tentit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UniSodexo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
