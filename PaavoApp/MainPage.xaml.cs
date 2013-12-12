@@ -28,16 +28,15 @@ namespace PaavoApp
             InitializeComponent();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+		private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
 
-        }
+		}
 
-        private void AalefTap(object sender, GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/StudentUnion.xaml", UriKind.Relative));
-        }
-
+		private void AalefTap(object sender, GestureEventArgs e)
+		{
+			NavigationService.Navigate(new Uri("/StudentUnion.xaml", UriKind.Relative));
+		}
         private void KurniekkaTap(object sender, GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Kurniekka.xaml", UriKind.Relative));
@@ -61,6 +60,5 @@ namespace PaavoApp
 		{
 			NavigationService.Navigate(new Uri("/Ruut.xaml", UriKind.Relative));
 		}
-
-    }
+	}
 }
