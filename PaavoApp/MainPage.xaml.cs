@@ -15,8 +15,10 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 
-//
+
 
 namespace PaavoApp
 {
@@ -59,6 +61,10 @@ namespace PaavoApp
 
         private void Selam_Click(object sender, RoutedEventArgs e)
         {
+            Stream stream = TitleContainer.OpenStream("Resources/seeelam.wav");
+            SoundEffect effect = SoundEffect.FromStream(stream);
+            FrameworkDispatcher.Update();
+            effect.Play();
             NavigationService.Navigate(new Uri("/SelamPage.xaml", UriKind.Relative));
         }
 

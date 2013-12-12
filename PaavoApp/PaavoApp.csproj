@@ -87,6 +87,7 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Xna.Framework" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -205,6 +206,7 @@
     <Content Include="Resources\Background.png" />
     <Content Include="Resources\error.png" />
     <Content Include="Resources\kurniekkalogo.png" />
+    <Content Include="Resources\seeelam.wav" />
     <Content Include="Resources\Selam2.png" />
     <Content Include="Resources\Lel.png" />
     <Content Include="Resources\Selam.jpg" />
