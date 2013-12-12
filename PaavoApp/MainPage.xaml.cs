@@ -28,6 +28,17 @@ namespace PaavoApp
         public MainPage()
         {
             InitializeComponent();
+            ImageBrush saa_background = new ImageBrush();
+            saa_background.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri("Resources/saa.png", UriKind.Relative));
+            Saa.Background = saa_background;
+
+            ImageBrush ruut_background = new ImageBrush();
+            ruut_background.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri("Resources/ruut.png", UriKind.Relative));
+            RuutCam.Background = ruut_background;
+
+            ImageBrush tentit_background = new ImageBrush();
+            tentit_background.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri("Resources/tentit.png", UriKind.Relative));
+            Tentit.Background = tentit_background;
         }
 
 		private void AalefTap(object sender, GestureEventArgs e)

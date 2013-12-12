@@ -205,10 +205,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ajax-loader.gif" />
     <Content Include="Resources\Background.png" />
     <Content Include="Resources\error.png" />
     <Content Include="Resources\kurniekkalogo.png" />
+    <Content Include="Resources\ruut.png" />
+    <Content Include="Resources\saa.png" />
     <Content Include="Resources\seeelam.wav" />
     <Content Include="Resources\Selam2.png" />
     <Content Include="Resources\Lel.png" />
@@ -220,6 +221,7 @@
     <Content Include="Resources\Paavo_Ruokalistat_Background.png" />
     <Content Include="Resources\SodexoCampusLogo.png" />
     <Content Include="Resources\SodexoUniLogo.png" />
+    <Content Include="Resources\tentit.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup />

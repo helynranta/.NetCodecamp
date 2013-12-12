@@ -9,7 +9,6 @@
 	xmlns:local="clr-namespace:PaavoApp" 
 	x:Class="PaavoApp.MainPage" 
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
-	d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
 	FontFamily="{StaticResource PhoneFontFamilyNormal}"
 	FontSize="{StaticResource PhoneFontSizeNormal}"
 	Foreground="{StaticResource PhoneForegroundBrush}"
@@ -28,24 +27,21 @@
             <controls:PanoramaItem Header="Skinnarila" FontSize="25" FontFamily="Segoe WP Black" Width="433">
                 <!--Double line list with text wrapping-->
                 <Grid Opacity="1">
-                    <Button Content="Tentit" Width="200" Click="ExamButtonClick" Height="200" Margin="11,10,210,288"/>
-                    <Button Content="Sää" Width="200" Click="Weather_Click" Height="200" Margin="211,10,10,288"/>
-                    <Button Content="RuutCam" Width="200" Click="RuutButtonClick" Height="200" Margin="11,215,210,83"/>
-                    <Button Content="Selam" Width="200" Click="Selam_Click" Height="200" Margin="211,215,10,83"/>
+                    <Button x:Name="Tentit" Content="Tentit" Width="200" Click="ExamButtonClick" Height="200" Margin="11,10,210,288"/>
+                    <Button x:Name="Saa" Content="Sää" Width="200" Click="Weather_Click" Height="200" Margin="211,10,10,288"/>
+                    <Button x:Name="RuutCam" Content="RuutCam" Width="200" Click="RuutButtonClick" Height="200" Margin="11,215,210,83"/>
+                    <Button x:Name="Selam" Content="Selam" Width="200" Click="Selam_Click" Height="200" Margin="211,215,10,83"/>
                 </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item for restaurants-->
             <controls:PanoramaItem Header="Ruokalista">
-                <ListBox Margin="0,0,-12,0">
-                    <Image Source="Resources/aaleflogo.png" Tap="AalefTap" Width="431" Margin="0" />
+                <ListBox Margin="0,0,0,0">
+                    <Image Source="Resources/aaleflogo.png" Tap="AalefTap" Width="431" Margin="0"/>
                     <Image Source="Resources/kurniekkalogo.png" Tap="KurniekkaTap" Width="431" Margin="0" />
                     <Image Source="Resources/SodexoUniLogo.png" Tap="UniSodexoTap" Width="431" Margin="0" />
                     <Image Source="Resources/SodexoCampusLogo.png" Tap="CampusSodexoTap" Width="431" Margin="0" />
                 </ListBox>
-
-
-                <!--Double line list with image placeholder and text wrapping-->
             </controls:PanoramaItem>
         </controls:Panorama>
     </Grid>
