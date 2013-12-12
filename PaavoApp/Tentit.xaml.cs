@@ -205,13 +205,17 @@ namespace PaavoApp
                 tentti.times.Remove(time);
                 ExamsTime times = new ExamsTime();
                 //parse new time
-                dates = exam[2].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
+
+                dates = exam[3].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
                 time_date = dates[1].Substring(0, dates[1].Length - 2);
                 splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
                 if (splitted_date[0].Contains("&nbsp;"))
                     splitted_date[0] = splitted_date[0].Substring(0, splitted_date[0].Length - 6);
                 if (splitted_date[0] == "Ei aiempaa tenttiä")
                 {
+                    dates = exam[2].Split(new string[] { ">" }, StringSplitOptions.RemoveEmptyEntries);
+                    time_date = dates[1].Substring(0, dates[1].Length - 2);
+                    splitted_date = time_date.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
                     times.date = splitted_date[0];
                     times.time_ = splitted_date[1];
                     times.fullTime = "| " + splitted_date[0] + " klo. " + splitted_date[1] + " | ";

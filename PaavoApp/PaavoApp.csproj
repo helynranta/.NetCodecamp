@@ -93,6 +93,7 @@
     <Reference Include="PhoneCodeContractsAssemblies">
       <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\PhoneCodeContractsAssemblies.dll</HintPath>
     </Reference>
+    <Reference Include="system.data.linq" />
     <Reference Include="System.Runtime">
       <HintPath>..\packages\Microsoft.Bcl.1.0.19\lib\sl4-windowsphone71\System.Runtime.dll</HintPath>
     </Reference>
@@ -114,6 +115,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CampusSodexo.xaml.cs">
+      <DependentUpon>CampusSodexo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModels\AalefDatabase.cs" />
     <Compile Include="exams.cs" />
     <Compile Include="Kurniekka.xaml.cs">
       <DependentUpon>Kurniekka.xaml</DependentUpon>
@@ -135,6 +140,10 @@
     <Compile Include="Tentit.xaml.cs">
       <DependentUpon>Tentit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UniSodexo.xaml.cs">
+      <DependentUpon>UniSodexo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UniWeek.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Weather.xaml.cs">
@@ -143,10 +152,14 @@
     <Compile Include="week.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CampusSodexo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
+    </Page>
     <Page Include="Kurniekka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,10 +168,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <DesignData Include="SampleData\MainViewModelSampleData.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </DesignData>
     <Page Include="Ruut.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tentit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UniSodexo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,16 +203,21 @@
   <ItemGroup>
     <Resource Include="ajax-loader.gif" />
     <Content Include="Resources\Background.png" />
+    <Content Include="Resources\error.png" />
+    <Content Include="Resources\kurniekkalogo.png" />
     <Content Include="Resources\Selam2.png" />
     <Content Include="Resources\Lel.png" />
     <Content Include="Resources\Selam.jpg" />
     <Content Include="Resources\Paavo_Background.png" />
     <Content Include="Resources\aaleflogo.png" />
-    <Content Include="Resources\kurniekka_leveä.png" />
     <Content Include="Resources\Paavo_Gear.png" />
     <Content Include="Resources\Paavo_Icon.png" />
+    <Content Include="Resources\Paavo_Ruokalistat_Background.png" />
+    <Content Include="Resources\SodexoCampusLogo.png" />
+    <Content Include="Resources\SodexoUniLogo.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -26,35 +26,27 @@ namespace PaavoApp
         public MainPage()
         {
             InitializeComponent();
-
-            // Set the data context of the listbox control to the sample data
-            DataContext = App.ViewModel;
-            this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
 
-        // Load data for the ViewModel Items
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (!App.ViewModel.IsDataLoaded)
-            {
-                App.ViewModel.LoadData();
-            }
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void AalefTap(object sender, GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/StudentUnion.xaml", UriKind.Relative));
-        }
-
+		private void AalefTap(object sender, GestureEventArgs e)
+		{
+			NavigationService.Navigate(new Uri("/StudentUnion.xaml", UriKind.Relative));
+		}
         private void KurniekkaTap(object sender, GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Kurniekka.xaml", UriKind.Relative));
         }
+
+        private void UniSodexoTap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/UniSodexo.xaml", UriKind.Relative));
+        }
+
+        private void CampusSodexoTap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/CampusSodexo.xaml", UriKind.Relative));
+        }
+
 
         private void Weather_Click(object sender, RoutedEventArgs e)
         {
@@ -74,6 +66,5 @@ namespace PaavoApp
 		{
 			NavigationService.Navigate(new Uri("/Ruut.xaml", UriKind.Relative));
 		}
-
-    }
+	}
 }
