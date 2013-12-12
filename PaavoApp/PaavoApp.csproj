@@ -115,7 +115,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseModels\AalefDatabase.cs" />
+    <Compile Include="DatabaseModels\AalefDataItem.cs" />
+    <Compile Include="DatabaseModels\AalefDatabaseContext.cs" />
+    <Compile Include="DatabaseModels\RestaurantUpdatedItem.cs" />
+    <Compile Include="DatabaseModels\RestaurantUpdatedContext.cs" />
     <Compile Include="exams.cs" />
     <Compile Include="Kurniekka.xaml.cs">
       <DependentUpon>Kurniekka.xaml</DependentUpon>

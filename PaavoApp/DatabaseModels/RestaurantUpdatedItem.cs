@@ -11,75 +11,71 @@ using System.Collections.ObjectModel;
 
 namespace PaavoApp
 {
-    class AalefDatabase
-    {
-    }
-
     [Table]
-    public class AalefDatabaseModel : INotifyPropertyChanged, INotifyPropertyChanging
+    public class RestaurantUpdatedItem : INotifyPropertyChanged, INotifyPropertyChanging
     {
+
         // Define ID: private field, public property and database column.
-        private int _toDoItemId;
+        private int _id;
 
         [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
-        public int ToDoItemId
+        public int ID
         {
             get
             {
-                return _toDoItemId;
+                return _id;
             }
             set
             {
-                if (_toDoItemId != value)
+                if (_id != value)
                 {
-                    NotifyPropertyChanging("ToDoItemId");
-                    _toDoItemId = value;
-                    NotifyPropertyChanged("ToDoItemId");
+                    NotifyPropertyChanging("ID");
+                    _id = value;
+                    NotifyPropertyChanged("ID");
                 }
             }
         }
 
-        // Define item name: private field, public property and database column.
-        private string _itemName;
+        private string _name;
 
         [Column]
-        public string ItemName
+        public string Name
         {
             get
             {
-                return _itemName;
+                return _name;
             }
             set
             {
-                if (_itemName != value)
+                if (_name != value)
                 {
-                    NotifyPropertyChanging("ItemName");
-                    _itemName = value;
-                    NotifyPropertyChanged("ItemName");
+                    NotifyPropertyChanging("Name");
+                    _name = value;
+                    NotifyPropertyChanged("Name");
                 }
             }
         }
 
-        // Define completion value: private field, public property and database column.
-        private bool _isComplete;
+        private DateTime _updated;
 
         [Column]
-        public bool IsComplete
+        public DateTime Updated
         {
             get
             {
-                return _isComplete;
+                return _updated;
             }
             set
             {
-                if (_isComplete != value)
+                if (_updated != value)
                 {
-                    NotifyPropertyChanging("IsComplete");
-                    _isComplete = value;
-                    NotifyPropertyChanged("IsComplete");
+                    NotifyPropertyChanging("Updated");
+                    _updated = value;
+                    NotifyPropertyChanged("Updated");
                 }
             }
         }
+
         // Version column aids update performance.
         [Column(IsVersion = true)]
         private Binary _version;

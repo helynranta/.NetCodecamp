@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using PaavoApp.DatabaseModels;
 
 namespace PaavoApp
 {
@@ -73,6 +74,29 @@ namespace PaavoApp
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
+            }
+
+            // Create the databases for Aalef
+            using (AalefDatabaseContext db = new AalefDatabaseContext(AalefDatabaseContext.DBConnectionString))
+            {
+                if (db.DatabaseExists() == false)
+                {
+                    db.CreateDatabase();
+                }
+            }
+
+            // Create the databases for Aalef
+            using (RestaurantUpdatedContext db = new RestaurantUpdatedContext(RestaurantUpdatedContext.DBConnectionString))
+            {
+                if (db.DatabaseExists() == false)
+                {
+                    db.CreateDatabase();
+                    db.UpdateItems.InsertOnSubmit(new RestaurantUpdatedItem { Updated = new DateTime(1900, 11, 11, 11, 11, 11), Name = Kurniekka.Name });
+                    db.UpdateItems.InsertOnSubmit(new RestaurantUpdatedItem { Updated = new DateTime(1900, 11, 11, 11, 11, 11), Name = StudentUnion.Name });
+                    db.SubmitChanges();
+                    //db.UpdateItems.InsertOnSubmit(new RestaurantUpdatedItem { Updated = DateTime.MinValue, Name = Kurniekka.NameProperty.ToString() });
+                    //db.UpdateItems.InsertOnSubmit(new RestaurantUpdatedItem { Updated = DateTime.MinValue, Name = Kurniekka.NameProperty.ToString() });
+                }
             }
 
         }
@@ -156,7 +180,7 @@ namespace PaavoApp
             // Set the root visual to allow the application to render
             if (RootVisual != RootFrame)
                 RootVisual = RootFrame;
-           
+
             // Remove this handler since it is no longer needed
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
         }

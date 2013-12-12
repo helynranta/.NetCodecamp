@@ -27,6 +27,7 @@ namespace PaavoApp
         public ObservableCollection<MyListViewModel> WednesdayList { get; set; }
         public ObservableCollection<MyListViewModel> ThursdayList { get; set; }
         public ObservableCollection<MyListViewModel> FridayList { get; set; }
+        public static readonly string Name = "Kurniekka";
 
         public Kurniekka()
         {
