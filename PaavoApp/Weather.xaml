@@ -26,10 +26,10 @@
                         <TextBlock Width="auto" Text="{Binding [Kosteus]}" FontSize="40" Margin="0,0,20,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Näkyvyys: "/>
+                        <TextBlock Width="auto" Text="{Binding [Näkyvyys]}" FontSize="40" Margin="0,0,20,0" />
                         <TextBlock Text="Kastepiste: "/>
                         <TextBlock Width="auto" Text="{Binding [Kastepiste]}" FontSize="40" Margin="0,0,20,0" />
-                        <TextBlock Text="Lounaistuulta: "/>
-                        <TextBlock Width="auto" Text="{Binding [Lounaistuulta]}" FontSize="40" Margin="0,0,20,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Puuska: "/>
@@ -38,10 +38,6 @@
                         <TextBlock Width="auto" Text="{Binding [Paine]}" FontSize="40" Margin="0,0,20,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Pilvistä: "/>
-                        <TextBlock Width="auto" Text="{Binding [Pilvistä]}" FontSize="40" Margin="0,0,20,0" />
-                        <TextBlock Text="Näkyvyys: "/>
-                        <TextBlock Width="auto" Text="{Binding [Näkyvyys]}" FontSize="40" Margin="0,0,20,0" />
                     </StackPanel>
                     <Image Source="http://cdn.fmi.fi/weather-observations/products/finland/finland-weather-observations-map.png" HorizontalAlignment="Left" Height="484" VerticalAlignment="Top" Width="365" Margin="0,0,-96,0"/>
                 </StackPanel>
