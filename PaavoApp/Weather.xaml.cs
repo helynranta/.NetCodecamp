@@ -22,9 +22,7 @@ namespace PaavoApp
                     {"Lämpötila", "1"},
                     {"Kastepiste","2"},
                     {"Puuska", "2"},
-                    {"Pilvistä","3"},
                     {"Kosteus", "4"},
-                    {"Lounaistuulta","5"},
                     {"Paine", "6"},
                     {"Näkyvyys","7"} 
                 };
